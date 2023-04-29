@@ -7,7 +7,7 @@ public class Player : MonoBehaviour, IDamageable
    
     public static Player Instance { get; private set; }
     
-    void Start()
+    void Awake()
     {
         if (Instance == null)
             Instance = this;

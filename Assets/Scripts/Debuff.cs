@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace DefaultNamespace
 {
@@ -6,11 +7,13 @@ namespace DefaultNamespace
     {
         public Action<bool> Action;
         public float RewardRatio;
+        public Sprite Icon;
 
-        public Debuff(Action<bool> action, float rewardRatio)
+        public Debuff(Action<bool> action, float rewardRatio, Sprite icon)
         {
             Action = action;
             RewardRatio = rewardRatio;
+            Icon = icon;
         }
     }
 }

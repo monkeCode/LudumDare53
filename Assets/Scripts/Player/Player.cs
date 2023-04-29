@@ -47,7 +47,7 @@ namespace Player
             var newPointer = Instantiate(pointer);
             newPointer.target = delivery.Destination.transform.position;
             deliveries.Add(delivery, newPointer);
-            
+            UiManager.Instance.ShowDebuffIcons();
             delivery.Debuff.Action.Invoke(true);
         }
 
@@ -68,5 +68,9 @@ namespace Player
             return deliveriesToComplete;
         }
 
+        public Debuff[] GetDebuffsFromDeliveries()
+        {
+            return deliveries.Select(x => x.Key.Debuff).ToArray();
+        }
     }
 }

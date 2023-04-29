@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageText: {fileID: 1067418829567785544, guid: 133b9fed337565e488567f7a005d5f31, type: 3}
+  goldText: {fileID: 1067418829567785544, guid: 3f6269e22e049c24bb829ba01a652d20, type: 3}

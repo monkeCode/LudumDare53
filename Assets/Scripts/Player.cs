@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using Interfaces;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IDamageable, ISingleton<Player>
+public class Player : MonoBehaviour, IDamageable
 {
-    // Start is called before the first frame update
-    public Player Instance { get; private set; }
+   
+    public static Player Instance { get; private set; }
     
     void Start()
     {
@@ -16,7 +15,7 @@ public class Player : MonoBehaviour, IDamageable, ISingleton<Player>
             Destroy(gameObject);
     }
 
-    // Update is called once per frame
+ 
     void Update()
     {
         

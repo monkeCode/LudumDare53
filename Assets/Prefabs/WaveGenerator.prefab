@@ -44,5 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5320b21894e2b414fbb5090c2ad94607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wave: {fileID: 11400000, guid: 5b1e6b8bc8111d048965389ca2cee5ed, type: 2}
-  _radius: 5
+  _waves:
+  - {fileID: 11400000, guid: f01cc6a959714ae46b2f1e64d98b5d89, type: 2}
+  - {fileID: 11400000, guid: 5b1e6b8bc8111d048965389ca2cee5ed, type: 2}
+  _specialWaves:
+  - {fileID: 11400000, guid: b8dfdcb673fcba540b8c568fb884d067, type: 2}
+  _radius: 15
+  _delay: 1

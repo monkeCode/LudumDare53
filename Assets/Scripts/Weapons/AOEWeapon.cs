@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using Entities;
 using UnityEngine;
@@ -15,6 +16,7 @@ namespace Weapons
         [SerializeField] private AOEWeaponHitZone rightHitZone;
         private AOEWeaponHitZone _activeZone;
         private IReadOnlyList<Entity> _allMobs;
+        [SerializeField]private int allMobsCount;
 
         private void Start()
         {
@@ -24,6 +26,7 @@ namespace Weapons
 
         private void Update()
         {
+            allMobsCount = _allMobs.Count;
             UpdateCooldown();   
         }
 
@@ -41,9 +44,9 @@ namespace Weapons
         {
             foreach (var mob in _allMobs.Where(mob => IsInsideZone(_activeZone, mob)).ToList())
             {
-                Debug.Log("damage taken");
                 mob.TakeDamage(Damage);
             }
+            StartCoroutine(ShowHitEffect(_activeZone.hitEffect));
             ChangeSide();
         }
 
@@ -61,6 +64,13 @@ namespace Weapons
         private void ChangeSide()
         {
             _activeZone = _activeZone == leftHitZone ? rightHitZone : leftHitZone;
+        }
+
+        private IEnumerator ShowHitEffect(GameObject effect)
+        {
+            effect.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            effect.SetActive(false);
         }
     }
 }

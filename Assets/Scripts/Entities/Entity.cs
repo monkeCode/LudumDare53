@@ -7,6 +7,7 @@ namespace Entities
     public class Entity : MonoBehaviour, IDamageable
     {
         [SerializeField] protected int hp;
+        [SerializeField] protected int maxHp;
         [SerializeField] protected float speed;
         [SerializeField] protected int damage;
         [SerializeField] protected float damageDelay;
@@ -55,6 +56,11 @@ namespace Entities
         protected virtual void Die()
         {
             HeinzDoofenshmirtzInstantinator.Destroy(this);
+        }
+
+        public void ResetHp()
+        {
+            hp = maxHp;
         }
 
         public void Kill()

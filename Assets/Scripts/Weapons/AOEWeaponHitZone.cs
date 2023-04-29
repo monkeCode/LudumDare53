@@ -6,6 +6,7 @@ namespace Weapons
     {
         [SerializeField] private Transform topLeft;
         [SerializeField] private Transform bottomRight;
+        [SerializeField] public GameObject hitEffect;
         public float topLeftX;
         public float topLeftY;
         public float bottomRightX;

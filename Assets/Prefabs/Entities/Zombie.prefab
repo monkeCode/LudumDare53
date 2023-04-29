@@ -98,8 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 4
+  maxHp: 4
   speed: 1
   damage: 1
   damageDelay: 0.5
   atkDistance: 0.14
-  _type: 2
+  _type: 0

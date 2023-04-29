@@ -49,7 +49,7 @@ public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
             for (int i = 0; i < START_MOSTERS_COUNT; i++)
             {
                 var entity = Instantiate(en, new Vector2(10000, 10000), Quaternion.identity);
-                entity.enabled = false;
+                entity.gameObject.SetActive(false);
                 _bufferEntities[key].Enqueue(entity);
             }
         }
@@ -60,7 +60,7 @@ public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
         if (Instance._bufferEntities[en.Type].Count > 0)
         {
             var entity =  Instance._bufferEntities[en.Type].Dequeue();
-            entity.enabled = true;
+            entity.gameObject.SetActive(true);
             entity.transform.position = pos;
             Instance._sceneEntities.Add(entity);
             return entity;
@@ -74,7 +74,8 @@ public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
 
     public static void Destroy(Entity en)
     {
-        en.enabled = false;
+        en.ResetHp();
+        en.gameObject.SetActive(false);
         en.transform.position = new Vector3(10000, 10000);
         Instance._sceneEntities.Remove(en);
         Instance._bufferEntities[en.Type].Enqueue(en);

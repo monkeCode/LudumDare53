@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-namespace Interfaces
+namespace Weapons
 {
     public abstract class Weapon: MonoBehaviour
     {
-        public abstract float Damage { get; }
+        public abstract int Damage { get; }
         public abstract float Cooldown { get; }
         public abstract void Attack();
     }

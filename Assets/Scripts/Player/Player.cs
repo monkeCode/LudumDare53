@@ -1,6 +1,8 @@
 using Interfaces;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
+using Weapons;
 
 namespace Player
 {
@@ -33,7 +35,5 @@ namespace Player
             onDeath.Invoke();
             Destroy(this);
         }
-
-        
     }
 }

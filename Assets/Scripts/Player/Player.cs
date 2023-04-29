@@ -31,7 +31,7 @@ namespace Player
         public void Kill()
         {
             onDeath.Invoke();
-            Destroy(this);
+            Destroy(gameObject);
         }
 
         

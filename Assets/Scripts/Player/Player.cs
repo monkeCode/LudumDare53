@@ -2,8 +2,10 @@ using System.Collections.Generic;
 using System.Linq;
 using DefaultNamespace;
 using Interfaces;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
+using Weapons;
 
 namespace Player
 {
@@ -38,7 +40,6 @@ namespace Player
         public void Kill()
         {
             onDeath.Invoke();
-            Destroy(this);
         }
 
         public void StartDelivery(Delivery delivery)

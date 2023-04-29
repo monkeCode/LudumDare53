@@ -1,3 +1,4 @@
+using Entities;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Waves/Simple")]
@@ -8,9 +9,10 @@ public class SimpleWave : Wave
     
     public override void Spawn(Vector2 position, float radius)
     {
+        float phase = Random.Range(0, 2 * Mathf.PI);
         for (int i = 0; i < _count; i++)
         {
-            var spawnPos = new Vector2(Mathf.Cos((float)i / _count * 2 * Mathf.PI), Mathf.Sin((float)i / _count * 2 * Mathf.PI)) *
+            var spawnPos = new Vector2(Mathf.Cos((float)i / _count * 2 * Mathf.PI + phase), Mathf.Sin((float)i / _count * 2 * Mathf.PI + phase)) *
                 radius + position;
             Instantiate(_entity, spawnPos, Quaternion.identity);
         }

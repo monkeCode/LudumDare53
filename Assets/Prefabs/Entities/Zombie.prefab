@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 2170556768774635062}
   - component: {fileID: 2170556768774635065}
   - component: {fileID: 2170556768774635063}
-  - component: {fileID: 6707171065565370318}
-  - component: {fileID: 3770440146834714568}
   m_Layer: 6
   m_Name: Zombie
   m_TagString: Untagged
@@ -104,35 +102,3 @@ MonoBehaviour:
   damage: 1
   damageDelay: 0.5
   atkDistance: 0.14
---- !u!58 &6707171065565370318
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2170556768774635064}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0014601946, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.18
---- !u!58 &3770440146834714568
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2170556768774635064}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0014603958, y: -0.07594158}
-  serializedVersion: 2
-  m_Radius: 0.045810945

@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 2948295474564549869}
   - component: {fileID: 2948295474564549870}
   - component: {fileID: 2948295474564549868}
-  - component: {fileID: 680738627982731491}
-  - component: {fileID: 2752832339419675738}
   m_Layer: 0
   m_Name: FckinPumpkin
   m_TagString: Untagged
@@ -104,35 +102,3 @@ MonoBehaviour:
   damage: 5
   damageDelay: 0.5
   atkDistance: 0.3
---- !u!58 &680738627982731491
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2948295474564549871}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.009351492, y: 0.05573553}
-  serializedVersion: 2
-  m_Radius: 0.19155699
---- !u!58 &2752832339419675738
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2948295474564549871}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0051832497, y: -0.06930898}
-  serializedVersion: 2
-  m_Radius: 0.067901835

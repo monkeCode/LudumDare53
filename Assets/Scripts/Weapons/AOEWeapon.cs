@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Interfaces;
+using Entities;
 using UnityEngine;
 
 namespace Weapons
@@ -11,60 +9,56 @@ namespace Weapons
     {
         public override int Damage => 5;
         public override float Cooldown => 2;
-        public int mobsInAreaCount;
+        
+        private float _time;
+        [SerializeField] private AOEWeaponHitZone leftHitZone;
+        [SerializeField] private AOEWeaponHitZone rightHitZone;
+        private AOEWeaponHitZone _activeZone;
+        private List<Entity> _allMobs;
 
-        public readonly List<IDamageable> MobsInArea = new List<IDamageable>(100);
-        private float time;
-        [SerializeField] private AOEWeaponHit leftHit;
-        [SerializeField] private AOEWeaponHit rightHit;
+        private void Start()
+        {
+            _activeZone = rightHitZone;
+        }
 
         private void Update()
         {
-            mobsInAreaCount = MobsInArea.Count;
             UpdateCooldown();   
         }
 
         private void UpdateCooldown()
         {
-            time += Time.deltaTime;
-            if (time >= Cooldown)
+            _time += Time.deltaTime;
+            if (_time >= Cooldown)
             {
                 Attack();
-                time = 0;
+                _time = 0;
             }
         }
 
         public override void Attack()
         {
-            foreach (var mob in MobsInArea.ToList())
+            foreach (var mob in _allMobs.Where(mob => IsInsideZone(_activeZone, mob)))
             {
-                mob?.TakeDamage(Damage);
+                mob.TakeDamage(Damage);
             }
-
-            MobsInArea.Clear();
-            if (leftHit.gameObject.activeSelf)
-            {
-                leftHit.ShowHit();
-            }
-
-            if (rightHit.gameObject.activeSelf)
-            {
-                rightHit.ShowHit();
-            }
+            ChangeSide();
         }
 
-        public void ChangeSide()
+        private static bool IsInsideZone(AOEWeaponHitZone zone, Entity mob)
         {
-            
-            if (leftHit.gameObject.activeSelf)
-            {
-                leftHit.gameObject.SetActive(false);
-                rightHit.gameObject.SetActive(true);
-            }
-            else
-            {
-                leftHit.gameObject.SetActive(true);
-                rightHit.gameObject.SetActive(false);}
+            var position = mob.transform.position;
+            var mobX = position.x;
+            var mobY = position.y;
+            return mobX >= zone.topLeftX &&
+                   mobX <= zone.bottomRightX &&
+                   mobY >= zone.bottomRightY &&
+                   mobY <= zone.topLeftY;
+        }
+
+        private void ChangeSide()
+        {
+            _activeZone = _activeZone == leftHitZone ? rightHitZone : leftHitZone;
         }
     }
 }

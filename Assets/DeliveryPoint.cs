@@ -8,16 +8,26 @@ using Range = UnityEngine.SocialPlatforms.Range;
 
 public class DeliveryPoint : MonoBehaviour
 {
-    public static List<DeliveryPoint> DeliveryPoints;
-    public static int TakeDeliveryCD;
-    private static float NextDeliveryTime;
+    private static List<DeliveryPoint> DeliveryPoints = new List<DeliveryPoint>();
+    private static int TakeDeliveryCD = 30;
+    private float NextDeliveryTime;
     public List<Debuff> debuffs;
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void Start()
     {
+        DeliveryPoints.Add(this);
+        debuffs = new List<Debuff>();
+        var testDebuff = new Debuff(() => {}, 1);
+        debuffs.Add(testDebuff);
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("collision");
+        if (!col.gameObject.GetComponent<Player.Player>())
+            return;
         
-        // TakeDelivery();
+        CompleteDeliveries();
 
         if (NextDeliveryTime > 0)
         {
@@ -25,15 +35,19 @@ public class DeliveryPoint : MonoBehaviour
             return;
         }
 
-        GiveDelivery();
+        Player.Player.Instance.StartDelivery(GetNewDelivery());
     }
 
-    private void TakeDelivery(Delivery delivery)
+    private void CompleteDeliveries()
     {
-        var reward = delivery.Reward;
+        var deliveries = Player.Player.Instance.CompleteDelivery(this);
+        if (deliveries.Length == 0)
+            return;
+        foreach (var delivery in deliveries)
+            Player.Player.Instance.money += delivery.Reward;
     }
 
-    private void GiveDelivery()
+    private Delivery GetNewDelivery()
     {
         var destination = this;
         while (destination == this)
@@ -42,5 +56,7 @@ public class DeliveryPoint : MonoBehaviour
         var delivery = new Delivery(this, destination, debuff);
         
         NextDeliveryTime = TakeDeliveryCD;
+
+        return delivery;
     }
 }

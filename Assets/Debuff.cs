@@ -2,9 +2,15 @@
 
 namespace DefaultNamespace
 {
-    public abstract class Debuff
+    public class Debuff
     {
-        public abstract void Action();
+        public Action Action;
         public float RewardRatio;
+
+        public Debuff(Action action, float rewardRatio)
+        {
+            Action = action;
+            RewardRatio = rewardRatio;
+        }
     }
 }

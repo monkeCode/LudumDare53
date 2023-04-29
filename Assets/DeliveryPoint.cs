@@ -17,8 +17,10 @@ public class DeliveryPoint : MonoBehaviour
     {
         DeliveryPoints.Add(this);
         debuffs = new List<Debuff>();
-        var testDebuff = new Debuff(() => {}, 1);
-        debuffs.Add(testDebuff);
+        var speedDebuff = new Debuff((x) => { Player.MovementsController.Instance.SpeedDebuff(x); }, 2);
+        var invertDebuff = new Debuff((x) => { Player.MovementsController.Instance.InvertMovementDebuff(x); }, 2);
+        debuffs.Add(speedDebuff);
+        debuffs.Add(invertDebuff);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

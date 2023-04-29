@@ -47,6 +47,8 @@ namespace Player
             var newPointer = Instantiate(pointer);
             newPointer.target = delivery.Destination.transform.position;
             deliveries.Add(delivery, newPointer);
+            
+            delivery.Debuff.Action.Invoke(true);
         }
 
         public Delivery[] CompleteDelivery(DeliveryPoint destination)
@@ -56,6 +58,7 @@ namespace Player
                 .Select(x =>
                 {
                     Destroy(x.Value.gameObject);
+                    x.Key.Debuff.Action.Invoke(false);
                     return x.Key;
                 })
                 .ToArray();

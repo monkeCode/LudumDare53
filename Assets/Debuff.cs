@@ -4,10 +4,10 @@ namespace DefaultNamespace
 {
     public class Debuff
     {
-        public Action Action;
+        public Action<bool> Action;
         public float RewardRatio;
 
-        public Debuff(Action action, float rewardRatio)
+        public Debuff(Action<bool> action, float rewardRatio)
         {
             Action = action;
             RewardRatio = rewardRatio;

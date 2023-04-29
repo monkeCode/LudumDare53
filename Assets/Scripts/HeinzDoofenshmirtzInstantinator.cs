@@ -78,4 +78,9 @@ public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
         Instance._sceneEntities.Remove(en);
         Instance._bufferEntities[en.Type].Enqueue(en);
     }
+
+    public IReadOnlyList<Entity> GetAllEntities()
+    {
+        return _sceneEntities;
+    }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 616059733930033044}
   - component: {fileID: 616059733930033047}
   - component: {fileID: -3757440594391992964}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,9 +164,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 616059733930033045}
     m_Modifications:
+    - target: {fileID: 808297172062620810, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693439037229084584, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5651888774061483489, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_Name
       value: AOEWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5651888774061483489, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5844278159950807346, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_RootOrder
@@ -210,6 +222,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5844278159950807346, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553346820697031565, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955243816273562826, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -11,7 +11,7 @@ namespace Player
         
         [SerializeField] private float health = 100;
         
-        private void Start()
+        private void Awake()
         {
             if (Instance == null)
                 Instance = this;

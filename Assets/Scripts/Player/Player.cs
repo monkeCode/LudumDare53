@@ -45,7 +45,7 @@ namespace Player
         public void StartDelivery(Delivery delivery)
         {
             var newPointer = Instantiate(pointer);
-            newPointer.target = delivery.Destination.transform;
+            newPointer.target = delivery.Destination.transform.position;
             deliveries.Add(delivery, newPointer);
         }
 

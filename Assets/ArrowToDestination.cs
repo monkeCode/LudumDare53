@@ -5,24 +5,13 @@ using UnityEngine;
 
 public class ArrowToDestination : MonoBehaviour
 {
-    // public Transform target;                    
-    //
-    //
-    // private void Update()
-    // {
-    //     if (target == null)
-    //         return;
-    //     var vectorToTarget = target.transform.position - transform.position;
-    //     var angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90;
-    //     transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-    // }
 
     private Camera cam;
     private float borderSize = 100f;
     private bool isOffScreen;
     private Vector3 vectorUp = new Vector3(0, 2, 0); 
-
-    public Transform target;
+    
+    public Vector3 target;
 
     private void Awake()
     {
@@ -31,11 +20,15 @@ public class ArrowToDestination : MonoBehaviour
 
     private void Update()
     {
-        var vectorToTarget = target.transform.position - transform.position;
-        var angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        var pointerOnScreenPos = cam.WorldToScreenPoint(target.position);
+        var toPosition = target;
+        var fromPosition = cam.transform.position;
+        fromPosition.z = 0f;
+        var dir = (toPosition - fromPosition).normalized;
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
+        transform.localEulerAngles = new Vector3(0, 0, angle);
+
+        var pointerOnScreenPos = cam.WorldToScreenPoint(target);
         isOffScreen = pointerOnScreenPos.x <= borderSize || pointerOnScreenPos.x >= Screen.width - borderSize ||
                       pointerOnScreenPos.y <= borderSize || pointerOnScreenPos.y >= Screen.height - borderSize;
         if (isOffScreen)
@@ -54,7 +47,10 @@ public class ArrowToDestination : MonoBehaviour
             transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0f);
         }
         else
-            transform.position = target.transform.position + vectorUp;
+        {
+            transform.position = target + vectorUp;
+            transform.localEulerAngles = new Vector3(0, 0, 180);
+        }
 
     }
 }

@@ -66,27 +66,5 @@ namespace Weapons
                 leftHit.gameObject.SetActive(true);
                 rightHit.gameObject.SetActive(false);}
         }
-
-        
-
-        private void OnTriggerEnter2D(Collider2D col)
-        {
-            Debug.Log("OnCollisionEnter2D");
-            var damageable = col.gameObject.GetComponent<IDamageable>();
-            if (damageable is not null)
-            {
-                MobsInArea.Add(damageable);
-            }
-        }
-        
-        private void OnTriggerExit2D(Collider2D col)
-        {
-            Debug.Log("OnCollisionExit2D");
-            var damageable = col.gameObject.GetComponent<IDamageable>();
-            if (damageable is not null)
-            {
-                MobsInArea.Remove(damageable);
-            }
-        }
     }
 }

@@ -31,10 +31,10 @@ public class Entity : MonoBehaviour, IDamageable
 
     protected void LifeCycle()
     {
-        var toPlayerDist = Player.Instance.transform.position - transform.position;
+        var toPlayerDist = Player.Player.Instance.transform.position - transform.position;
         Move(toPlayerDist);
         if (!_canDamage || !(toPlayerDist.magnitude <= atkDistance)) return;
-        Attack(Player.Instance);
+        Attack(Player.Player.Instance);
         StartCoroutine(DamageDelay());
     }
 

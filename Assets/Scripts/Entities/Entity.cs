@@ -11,6 +11,9 @@ namespace Entities
         [SerializeField] protected int damage;
         [SerializeField] protected float damageDelay;
         [SerializeField] protected float atkDistance;
+        [SerializeField] private MonsterType _type;
+        
+        public MonsterType Type => _type;
 
         private bool _canDamage = true;
     

@@ -14,11 +14,12 @@ namespace Weapons
         [SerializeField] private AOEWeaponHitZone leftHitZone;
         [SerializeField] private AOEWeaponHitZone rightHitZone;
         private AOEWeaponHitZone _activeZone;
-        private List<Entity> _allMobs;
+        private IReadOnlyList<Entity> _allMobs;
 
         private void Start()
         {
             _activeZone = rightHitZone;
+            _allMobs = HeinzDoofenshmirtzInstantinator.Instance.GetAllEntities();
         }
 
         private void Update()
@@ -38,8 +39,9 @@ namespace Weapons
 
         public override void Attack()
         {
-            foreach (var mob in _allMobs.Where(mob => IsInsideZone(_activeZone, mob)))
+            foreach (var mob in _allMobs.Where(mob => IsInsideZone(_activeZone, mob)).ToList())
             {
+                Debug.Log("damage taken");
                 mob.TakeDamage(Damage);
             }
             ChangeSide();

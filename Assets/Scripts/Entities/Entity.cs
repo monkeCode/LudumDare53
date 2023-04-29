@@ -51,12 +51,10 @@ namespace Entities
                 Die();
             }
         }
-
-    
-    
+        
         protected virtual void Die()
         {
-            Destroy(gameObject);
+            HeinzDoofenshmirtzInstantinator.Destroy(this);
         }
 
         public void Kill()

@@ -11,12 +11,14 @@ namespace Weapons
         public float bottomRightX;
         public float bottomRightY;
 
-        private void Start()
+        private void Update()
         {
-            topLeftX = topLeft.transform.position.x;
-            topLeftY = topLeft.transform.position.y;
-            bottomRightX = bottomRight.transform.position.x;
-            bottomRightY = bottomRight.transform.position.y;
+            var position = topLeft.transform.position;
+            topLeftX = position.x;
+            topLeftY = position.y;
+            var position1 = bottomRight.transform.position;
+            bottomRightX = position1.x;
+            bottomRightY = position1.y;
         }
     }
 }

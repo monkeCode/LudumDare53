@@ -146,4 +146,5 @@ MonoBehaviour:
   damage: 1
   damageDelay: 0.5
   atkDistance: 0.19
+  _type: 2
   _maxVelocity: 7

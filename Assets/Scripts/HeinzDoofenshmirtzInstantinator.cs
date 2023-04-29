@@ -48,7 +48,7 @@ public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
             };
             for (int i = 0; i < START_MOSTERS_COUNT; i++)
             {
-                var entity = Instantiate(en, new Vector2(10000, 10000));
+                var entity = Instantiate(en, new Vector2(10000, 10000), Quaternion.identity);
                 entity.enabled = false;
                 _bufferEntities[key].Enqueue(entity);
             }
@@ -66,6 +66,7 @@ public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
             return entity;
         }
 
+        return null;
         var entity2 = Instantiate(en, pos);
         Instance._sceneEntities.Add(entity2);
         return entity2;

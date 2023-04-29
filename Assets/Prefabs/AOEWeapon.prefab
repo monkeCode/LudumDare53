@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b43f8d7d0854617bc191a773a4fab42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHit: {fileID: 1246754399163173058}
-  rightHit: {fileID: 5727455298522831376}
+  leftHitZone: {fileID: 5727455298522831376}
+  rightHitZone: {fileID: 1246754399163173058}
 --- !u!1 &5967261276050871760
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,9 +219,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topLeft: {fileID: 2496876033657649338}
-  topRight: {fileID: 0}
-  bottomLeft: {fileID: 0}
   bottomRight: {fileID: 5398096098813224847}
+  topLeftX: 0
+  topLeftY: 0
+  bottomRightX: 0
+  bottomRightY: 0
 --- !u!1 &9164759499037404266
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topLeft: {fileID: 2385487963408148440}
-  topRight: {fileID: 0}
-  bottomLeft: {fileID: 0}
   bottomRight: {fileID: 5744995198867532793}
+  topLeftX: 0
+  topLeftY: 0
+  bottomRightX: 0
+  bottomRightY: 0

@@ -102,3 +102,4 @@ MonoBehaviour:
   damage: 5
   damageDelay: 0.5
   atkDistance: 0.3
+  _type: 2

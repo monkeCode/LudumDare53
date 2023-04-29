@@ -14,7 +14,7 @@ public class SimpleWave : Wave
         {
             var spawnPos = new Vector2(Mathf.Cos((float)i / _count * 2 * Mathf.PI + phase), Mathf.Sin((float)i / _count * 2 * Mathf.PI + phase)) *
                 radius + position;
-            Instantiate(_entity, spawnPos, Quaternion.identity);
+            HeinzDoofenshmirtzInstantinator.Instantiate(_entity, spawnPos);
         }
     }
 }

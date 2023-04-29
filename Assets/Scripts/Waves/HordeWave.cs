@@ -16,7 +16,7 @@ public class HordeWave : Wave
         for (int i = 0; i < _count; i++)
         {
             var pos = point + _count / _density * Random.insideUnitCircle;
-            Instantiate(_entity, pos, Quaternion.identity);
+            HeinzDoofenshmirtzInstantinator.Instantiate(_entity, pos);
         }
     }
 }

@@ -16,14 +16,12 @@ public class DeliveryPoint : MonoBehaviour
     private void Start()
     {
         DeliveryPoints.Add(this);
-        debuffs = new List<Debuff>();
-        var testDebuff = new Debuff(() => {}, 1);
-        debuffs.Add(testDebuff);
+        debuffs = DebuffManager.Debuffs;
+
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("collision");
         if (!col.gameObject.GetComponent<Player.Player>())
             return;
         
@@ -43,8 +41,14 @@ public class DeliveryPoint : MonoBehaviour
         var deliveries = Player.Player.Instance.CompleteDelivery(this);
         if (deliveries.Length == 0)
             return;
+        var sum = 0f;
         foreach (var delivery in deliveries)
+        {
+            sum += delivery.Reward;
             Player.Player.Instance.money += delivery.Reward;
+        }
+        UiManager.Instance.ShowRewardText(Convert.ToInt32(sum), transform.position + new Vector3(0, 0.5f, 0));
+        UiManager.Instance.ShowDebuffIcons();
     }
 
     private Delivery GetNewDelivery()
@@ -56,7 +60,6 @@ public class DeliveryPoint : MonoBehaviour
         var delivery = new Delivery(this, destination, debuff);
         
         NextDeliveryTime = TakeDeliveryCD;
-
         return delivery;
     }
 }

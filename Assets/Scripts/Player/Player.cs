@@ -45,8 +45,10 @@ namespace Player
         public void StartDelivery(Delivery delivery)
         {
             var newPointer = Instantiate(pointer);
-            newPointer.target = delivery.Destination.transform;
+            newPointer.target = delivery.Destination.transform.position;
             deliveries.Add(delivery, newPointer);
+            UiManager.Instance.ShowDebuffIcons();
+            delivery.Debuff.Action.Invoke(true);
         }
 
         public Delivery[] CompleteDelivery(DeliveryPoint destination)
@@ -56,6 +58,7 @@ namespace Player
                 .Select(x =>
                 {
                     Destroy(x.Value.gameObject);
+                    x.Key.Debuff.Action.Invoke(false);
                     return x.Key;
                 })
                 .ToArray();
@@ -65,5 +68,9 @@ namespace Player
             return deliveriesToComplete;
         }
 
+        public Debuff[] GetDebuffsFromDeliveries()
+        {
+            return deliveries.Select(x => x.Key.Debuff).ToArray();
+        }
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Player
 {
+    [RequireComponent(typeof(Rigidbody2D))]
     public class MovementsController: MonoBehaviour
     {
         public static MovementsController Instance { get; private set; }
@@ -18,10 +19,8 @@ namespace Player
                 Destroy(gameObject);
             _controls = new Controls();
             _rigidbody2D = GetComponent<Rigidbody2D>();
-            if (_rigidbody2D is null)
-            {
-                Debug.LogError("Player Rigidbody2D is null");
-            }
+
+            _controls.Player.DropDelivery.performed += context => Player.Instance.DropDelivery();
         }
         
         private void FixedUpdate()
@@ -49,12 +48,14 @@ namespace Player
         }
         private void OnEnable()
         {
-            _controls.Enable();
+            _controls?.Enable();
         }
 
         private void OnDisable()
         {
-            _controls.Disable();
+            _controls?.Disable();
         }
+
+        public Vector2 Velocity => _rigidbody2D.velocity;
     }
 }

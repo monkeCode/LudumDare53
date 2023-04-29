@@ -36,7 +36,8 @@ namespace Entities
         protected void LifeCycle()
         {
             var toPlayerDist = Player.Player.Instance.transform.position - transform.position;
-            Move(toPlayerDist.normalized);
+            if(toPlayerDist.magnitude > atkDistance)
+                Move(toPlayerDist.normalized);
             if (!_canDamage || !(toPlayerDist.magnitude <= atkDistance)) return;
             Attack(Player.Player.Instance);
             StartCoroutine(DamageDelay());
@@ -55,6 +56,7 @@ namespace Entities
         
         protected virtual void Die()
         {
+            Player.Player.Instance.AddExperience(10);
             HeinzDoofenshmirtzInstantinator.Destroy(this);
         }
 

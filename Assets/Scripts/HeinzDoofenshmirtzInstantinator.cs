@@ -65,9 +65,8 @@ public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
             Instance._sceneEntities.Add(entity);
             return entity;
         }
-
-        return null;
-        var entity2 = Instantiate(en, pos);
+        
+        var entity2 = MonoBehaviour.Instantiate(en, pos, Quaternion.identity);
         Instance._sceneEntities.Add(entity2);
         return entity2;
     }

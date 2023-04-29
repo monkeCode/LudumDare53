@@ -1,13 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using DefaultNamespace;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using Range = UnityEngine.SocialPlatforms.Range;
 
 public class DeliveryPoint : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI _timer;
     private static List<DeliveryPoint> DeliveryPoints = new List<DeliveryPoint>();
     private static int TakeDeliveryCD = 30;
     private float NextDeliveryTime;
@@ -29,7 +32,7 @@ public class DeliveryPoint : MonoBehaviour
 
         if (NextDeliveryTime > 0)
         {
-            NextDeliveryTime -= Time.deltaTime;
+            //NextDeliveryTime -= Time.deltaTime;
             return;
         }
 
@@ -45,7 +48,7 @@ public class DeliveryPoint : MonoBehaviour
         foreach (var delivery in deliveries)
         {
             sum += delivery.Reward;
-            Player.Player.Instance.money += delivery.Reward;
+            Player.Player.Instance.Money += (int)delivery.Reward;
         }
         UiManager.Instance.ShowRewardText(Convert.ToInt32(sum), transform.position + new Vector3(0, 0.5f, 0));
         UiManager.Instance.ShowDebuffIcons();
@@ -61,5 +64,20 @@ public class DeliveryPoint : MonoBehaviour
         
         NextDeliveryTime = TakeDeliveryCD;
         return delivery;
+    }
+
+    private void Update()
+    {
+        if (NextDeliveryTime > 0)
+        {
+            _timer.alpha = 1;
+            _timer.SetText(((int)NextDeliveryTime).ToString());
+        }
+        else
+        {
+            _timer.alpha = 0;
+        }
+
+        NextDeliveryTime = Mathf.Clamp(NextDeliveryTime - Time.deltaTime, 0, NextDeliveryTime);
     }
 }

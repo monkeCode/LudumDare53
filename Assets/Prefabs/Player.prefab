@@ -101,10 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faaff65875b6b5346b28987f4102b459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 100
+  lvl: 1
+  currentExp: 0
+  _atkCount: 0
   onDeath:
     m_PersistentCalls:
       m_Calls: []
-  health: 100
   money: 0
   pointer: {fileID: 8570512634047531882, guid: 15167607af1d6a34796a7d802a3d303d, type: 3}
 --- !u!50 &616059733930033044
@@ -140,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad972fd184240648f7e7536bbecdf68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!70 &-3757440594391992964
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

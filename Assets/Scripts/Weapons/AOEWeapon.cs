@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Entities;
@@ -15,41 +16,46 @@ namespace Weapons
         [SerializeField] private AOEWeaponHitZone leftHitZone;
         [SerializeField] private AOEWeaponHitZone rightHitZone;
         private AOEWeaponHitZone _activeZone;
-        private IReadOnlyList<Entity> _allMobs;
-        [SerializeField]private int allMobsCount;
+        private static IReadOnlyList<Entity> AllMobs => HeinzDoofenshmirtzInstantinator.Instance.GetAllEntities();
+        private bool _canAtk = true;
 
         private void Start()
         {
             _activeZone = rightHitZone;
-            _allMobs = HeinzDoofenshmirtzInstantinator.Instance.GetAllEntities();
+        }
+
+        private IEnumerator UpdateCooldown()
+        {
+            yield return new WaitForSeconds(Cooldown);
+            _canAtk = true;
         }
 
         private void Update()
         {
-            allMobsCount = _allMobs.Count;
-            UpdateCooldown();   
-        }
-
-        private void UpdateCooldown()
-        {
-            _time += Time.deltaTime;
-            if (_time >= Cooldown)
-            {
+            if(_canAtk)
                 Attack();
-                _time = 0;
-            }
         }
 
         public override void Attack()
         {
-            foreach (var mob in _allMobs.Where(mob => IsInsideZone(_activeZone, mob)).ToList())
-            {
-                mob.TakeDamage(Damage);
-            }
-            StartCoroutine(ShowHitEffect(_activeZone.hitEffect));
-            ChangeSide();
+            _canAtk = false;
+            StartCoroutine(Atk());
         }
 
+        private IEnumerator Atk()
+        {
+            _activeZone = Player.MovementsController.Instance.Velocity.x > 0 ? rightHitZone : leftHitZone;
+            for (int i = 0; i < Player.Player.Instance.AtkCount; i++)
+            {
+                foreach (var mob in AllMobs.Where(mob => IsInsideZone(_activeZone, mob)).ToList())
+                {
+                    mob.TakeDamage(Damage);
+                }
+                yield return StartCoroutine(ShowHitEffect(_activeZone.hitEffect));
+                ChangeSide();
+            }
+            StartCoroutine(UpdateCooldown());
+        }
         private static bool IsInsideZone(AOEWeaponHitZone zone, Entity mob)
         {
             var position = mob.transform.position;
@@ -69,7 +75,7 @@ namespace Weapons
         private IEnumerator ShowHitEffect(GameObject effect)
         {
             effect.SetActive(true);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
             effect.SetActive(false);
         }
     }

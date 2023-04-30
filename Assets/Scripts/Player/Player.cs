@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DefaultNamespace;
@@ -17,6 +18,10 @@ namespace Player
         [SerializeField] private int lvl = 1;
         [SerializeField] private int currentExp;
         [SerializeField] private int _atkCount;
+        [SerializeField] private float atkCooldownModifier = 1;
+        [SerializeField] private float regenDelayInSeconds = 1;
+        [SerializeField] private int regenValue = 1;
+        public float AtkCooldownModifier => atkCooldownModifier;
 
         public int AtkCount => _atkCount;
         
@@ -51,6 +56,7 @@ namespace Player
             else
                 Destroy(gameObject);
             _deliveries = new Dictionary<Delivery, ArrowToDestination>();
+            StartCoroutine(RegenerateHp());
         }
         
         public void TakeDamage(int damage)
@@ -68,6 +74,15 @@ namespace Player
         public void Kill()
         {
             onDeath.Invoke();
+        }
+
+        private IEnumerator RegenerateHp()
+        {
+            while (true)
+            {
+                health = Math.Min(maxHealth, health+regenValue);
+                yield return new WaitForSeconds(regenDelayInSeconds);
+            }
         }
 
         public void StartDelivery(Delivery delivery)

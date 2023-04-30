@@ -105,7 +105,10 @@ MonoBehaviour:
   health: 100
   lvl: 1
   currentExp: 0
-  _atkCount: 0
+  _atkCount: 3
+  atkCooldownModifier: 1
+  regenDelayInSeconds: 1
+  regenValue: 1
   onDeath:
     m_PersistentCalls:
       m_Calls: []

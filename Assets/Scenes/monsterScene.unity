@@ -818,14 +818,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 616059733930033043, guid: 148c94a8db45dfc4b8481d781f7e42af, type: 3}
-      propertyPath: pointer
-      value: 
-      objectReference: {fileID: 8570512634047531882, guid: 15167607af1d6a34796a7d802a3d303d, type: 3}
-    - target: {fileID: 616059733930033043, guid: 148c94a8db45dfc4b8481d781f7e42af, type: 3}
-      propertyPath: _atkCount
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 616059733930033045, guid: 148c94a8db45dfc4b8481d781f7e42af, type: 3}
       propertyPath: m_RootOrder
       value: 0

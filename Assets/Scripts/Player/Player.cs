@@ -45,6 +45,7 @@ namespace Player
         private Dictionary<Delivery, ArrowToDestination> _deliveries;
 
         public event Action<int, int> HpChanged;
+        public event Action<int, int> HpChangedFromTo; 
         public event Action<int, int> ExpChanged;
 
         public event Action<int> MoneyChanged;
@@ -61,6 +62,7 @@ namespace Player
         
         public void TakeDamage(int damage)
         {
+            HpChangedFromTo?.Invoke(health, health-damage);
             health -= damage;
 
             if (health < 0)
@@ -151,6 +153,37 @@ namespace Player
             }
             _deliveries.Clear();
             UiManager.Instance.ShowDebuffIcons();
+        }
+
+        public void HealthDebuff(bool setActive)
+        {
+            if (setActive)
+            {
+                maxHealth /= 2;
+                if (health != 1)
+                    health /= 2;
+            }
+            else
+            {
+                maxHealth *= 2;
+                health *= 2;
+            }
+        }
+
+        public void LessAttacksDebuff(bool setActive)
+        {
+            if (setActive)
+                _atkCount -= 1;
+            else
+                _atkCount += 1;
+        }
+
+        public void LessAttackSpeedDebuff(bool setActive)
+        {
+            if (setActive)
+                atkCooldownModifier *= 1.5f;
+            else
+                atkCooldownModifier /= 1.5f;
         }
     }
 }

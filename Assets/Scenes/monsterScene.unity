@@ -893,6 +893,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlowDebuff: {fileID: 21300000, guid: 4fdd7a3dff497c04586c3b4ad88a67e1, type: 3}
   InvertMovementDebuff: {fileID: 21300000, guid: cb44b988c25cc78428c40923d27ba14c, type: 3}
+  HealthDebuff: {fileID: 21300000, guid: 6c2adb4b17140c945b1e750c7d85622b, type: 3}
+  FragileDeliveryDebuff: {fileID: 21300000, guid: 24f6b52d1ff5f8a419ddc80df50f028e, type: 3}
+  LessAttacksDebuff: {fileID: 21300000, guid: bffe3527fda01e64881f2f3219274062, type: 3}
+  LessAttackSpeedDebuff: {fileID: 21300000, guid: 6465fde1941c204418119df56752957b, type: 3}
 --- !u!4 &951821332
 Transform:
   m_ObjectHideFlags: 0

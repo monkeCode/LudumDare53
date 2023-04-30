@@ -66,6 +66,11 @@ public class DeliveryPoint : MonoBehaviour
         return delivery;
     }
 
+    private void OpenShopMenu()
+    {
+        
+    }
+
     private void Update()
     {
         if (NextDeliveryTime > 0)

@@ -19,6 +19,8 @@ public class HpBar : MonoBehaviour
     private void HpChanged(int arg1, int arg2)
     {
         var i = (int)Math.Floor((float)arg1 / arg2 * _sprites.Length);
+        if (i >= _sprites.Length)
+            i = _sprites.Length - 1;
         _image.sprite = _sprites[i];
         _image.SetNativeSize();
     }

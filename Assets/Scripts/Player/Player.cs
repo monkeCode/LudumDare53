@@ -71,6 +71,15 @@ namespace Player
             HpChanged?.Invoke(health, maxHealth);
         }
 
+        public void Heal(int healing)
+        {
+            health += healing;
+
+            if (health > 100)
+                health = 100;
+            HpChanged?.Invoke(health, maxHealth);
+        }
+
         public void Kill()
         {
             onDeath.Invoke();

@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,7 +127,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Minifantasy_TownsIIMoreBuildingSamples_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 255
+        width: 110
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858293b36272c454381f38ecf6151a63
+      internalID: -474356370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_TownsIIMoreBuildingSamples_1
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 256
+        width: 142
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11db7767cf860304690558af07224465
+      internalID: -1984225009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_TownsIIMoreBuildingSamples_2
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 272
+        width: 62
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6521925b5d0fadb4ba8dd6a53b853dcd
+      internalID: -1754261145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_TownsIIMoreBuildingSamples_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 135
+        width: 106
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d805e4d157f18749a173d39864e3349
+      internalID: -629960656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_TownsIIMoreBuildingSamples_4
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 136
+        width: 138
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ebca0fff5470ed418f75b1f035e7c1f
+      internalID: 2067373845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_TownsIIMoreBuildingSamples_5
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 152
+        width: 58
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d546bd2fabe48d44bf62dee18a28c2e
+      internalID: -511708582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_TownsIIMoreBuildingSamples_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 7
+        width: 118
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c3ea59ecfa6bc49bdf09a27d188c79
+      internalID: 1737302963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_TownsIIMoreBuildingSamples_7
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 8
+        width: 150
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7203f6dd6f4d6f344b4fe7df05d48c55
+      internalID: 202127273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_TownsIIMoreBuildingSamples_8
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 24
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b71c8a6c6b8de80458ce4f31cce929af
+      internalID: 830253948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +327,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Minifantasy_TownsIIMoreBuildingSamples_0: -474356370
+      Minifantasy_TownsIIMoreBuildingSamples_1: -1984225009
+      Minifantasy_TownsIIMoreBuildingSamples_2: -1754261145
+      Minifantasy_TownsIIMoreBuildingSamples_3: -629960656
+      Minifantasy_TownsIIMoreBuildingSamples_4: 2067373845
+      Minifantasy_TownsIIMoreBuildingSamples_5: -511708582
+      Minifantasy_TownsIIMoreBuildingSamples_6: 1737302963
+      Minifantasy_TownsIIMoreBuildingSamples_7: 202127273
+      Minifantasy_TownsIIMoreBuildingSamples_8: 830253948
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

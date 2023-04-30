@@ -52,7 +52,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 833ae3741d4d6e348bf70d09e761a7ea, type: 2}
   _bossWave:
   - {fileID: 11400000, guid: cf2b8530a57a42f468efd753b55b0848, type: 2}
-  _radius: 15
+  _radius: 60
   _delay: 1
   _specialDelay: 120
   _bossDelay: 360

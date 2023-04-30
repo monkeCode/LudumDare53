@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad972fd184240648f7e7536bbecdf68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 20
 --- !u!70 &-3757440594391992964
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -162,8 +162,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.018911123, y: 0.04188192}
-  m_Size: {x: 0.21654558, y: 0.3246081}
+  m_Offset: {x: -0.007491231, y: 0.13027936}
+  m_Size: {x: 0.8036125, y: 1.0800039}
   m_Direction: 0
 --- !u!1001 &2196598435818133787
 PrefabInstance:
@@ -182,39 +182,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2385487963408148440, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 2385487963408148440, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2496876033657649338, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2496876033657649338, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369113235739243896, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369113235739243896, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3369113235739243896, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4693439037229084584, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4865559946526402764, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865559946526402764, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865559946526402764, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5398096098813224847, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5398096098813224847, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: -3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527491974032278129, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5651888774061483489, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_Name
@@ -226,11 +246,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5744995198867532793, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5744995198867532793, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: -3.2
       objectReference: {fileID: 0}
     - target: {fileID: 5844278159950807346, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
       propertyPath: m_RootOrder

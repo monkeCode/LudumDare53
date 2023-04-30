@@ -215,6 +215,8 @@ MonoBehaviour:
   onPauseOff:
     m_PersistentCalls:
       m_Calls: []
+  isPauseOn: 0
+  canOffPause: 1
 --- !u!4 &279921821
 Transform:
   m_ObjectHideFlags: 0
@@ -1279,6 +1281,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaveGenerator
       objectReference: {fileID: 0}
+    - target: {fileID: 4260568117936130449, guid: 369a510038aaca7458dfe61a65199ba9, type: 3}
+      propertyPath: _waves.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260568117936130449, guid: 369a510038aaca7458dfe61a65199ba9, type: 3}
+      propertyPath: _waves.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 833ae3741d4d6e348bf70d09e761a7ea, type: 2}
+    - target: {fileID: 4260568117936130449, guid: 369a510038aaca7458dfe61a65199ba9, type: 3}
+      propertyPath: _specialWaves.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260568117936130449, guid: 369a510038aaca7458dfe61a65199ba9, type: 3}
+      propertyPath: _specialWaves.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: cf2b8530a57a42f468efd753b55b0848, type: 2}
     - target: {fileID: 4260568117936130450, guid: 369a510038aaca7458dfe61a65199ba9, type: 3}
       propertyPath: m_RootOrder
       value: 6

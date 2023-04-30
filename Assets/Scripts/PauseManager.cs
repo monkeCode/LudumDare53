@@ -7,7 +7,8 @@ public class PauseManager: MonoBehaviour
 {
     public UnityEvent onPauseOn = new();
     public UnityEvent onPauseOff = new();
-    private bool _isPauseOn;
+    public bool isPauseOn;
+    public bool canOffPause = true;
     public static PauseManager Instance { get; private set; }
 
     private void Awake()
@@ -18,32 +19,24 @@ public class PauseManager: MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (_isPauseOn)
-            {
-                PauseOff();
-            }
-            else
-            {
-                PauseOn();
-            }
-        }
+        canOffPause = true;
+        PauseOff();
     }
 
     public void PauseOn()
     {
         Time.timeScale = 0;
-        _isPauseOn = true;
+        isPauseOn = true;
         onPauseOn.Invoke();
     }
 
     public void PauseOff()
     {
+        if(!canOffPause) return;
         Time.timeScale = 1;
-        _isPauseOn = false;
+        isPauseOn = false;
         onPauseOff.Invoke();
     }
 }

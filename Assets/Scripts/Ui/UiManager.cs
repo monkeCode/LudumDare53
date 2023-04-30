@@ -33,23 +33,32 @@ public class UiManager : MonoBehaviour
         iconStep = new Vector3(iconExample.GetComponent<RectTransform>().rect.width, 0, 0);
         currentDebuffIcons = new List<GameObject>();
         DebuffIconPos = new Vector3(0, Screen.height - Yborder);
-        StartCoroutine(AddListeners());
     }
-
-    private IEnumerator AddListeners()
+    
+    private void Update()
     {
-        yield return new WaitForSeconds(1);
-        PauseManager.Instance.onPauseOn.AddListener(ShowPauseMenu);
-        PauseManager.Instance.onPauseOff.AddListener(ClosePauseMenu);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (PauseMenu.gameObject.activeSelf)
+            {
+                ClosePauseMenu();
+            }
+            else
+            {
+                ShowPauseMenu();
+            }
+        }
     }
-
+    
     private void ShowPauseMenu()
     {
+        PauseManager.Instance.PauseOn();
         PauseMenu.gameObject.SetActive(true);
     }
 
     private void ClosePauseMenu()
     {
+        PauseManager.Instance.PauseOff();
         PauseMenu.gameObject.SetActive(false);
     }
 
@@ -86,9 +95,17 @@ public class UiManager : MonoBehaviour
         }
     }
 
-    public void ShopUISetActive(bool setActive)
+    public void ShopUISetActive(bool value)
     {
-        ShopUI.SetActive(setActive);
-        Time.timeScale = setActive ? 0 : 1;
+        ShopUI.SetActive(value);
+        PauseManager.Instance.canOffPause = !value;
+        if (value)
+        {
+            PauseManager.Instance.PauseOn();
+        }
+        else
+        {
+            PauseManager.Instance.PauseOff();
+        }
     }
 }

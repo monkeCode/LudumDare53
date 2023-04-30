@@ -5,7 +5,6 @@ using System.Linq;
 using DefaultNamespace;
 using Interfaces;
 using JetBrains.Annotations;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using Weapons;
@@ -23,8 +22,6 @@ namespace Player
         [SerializeField] private float regenDelayInSeconds = 1;
         [SerializeField] private int regenValue = 1;
         public float AtkCooldownModifier => atkCooldownModifier;
-
-        [SerializeField] private TextMeshProUGUI moneyValue;
 
         public int AtkCount => _atkCount;
         
@@ -58,7 +55,6 @@ namespace Player
                 Instance = this;
             else
                 Destroy(gameObject);
-            MoneyChanged = i => moneyValue.text = i.ToString();
             _deliveries = new Dictionary<Delivery, ArrowToDestination>();
             StartCoroutine(RegenerateHp());
         }

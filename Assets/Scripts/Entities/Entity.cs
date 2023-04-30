@@ -13,6 +13,7 @@ namespace Entities
         [SerializeField] protected float damageDelay;
         [SerializeField] protected float atkDistance;
         [SerializeField] private MonsterType _type;
+        [SerializeField] private xpShard XPShard;
         
         public MonsterType Type => _type;
 
@@ -56,7 +57,8 @@ namespace Entities
         
         protected virtual void Die()
         {
-            Player.Player.Instance.AddExperience(10);
+            // Player.Player.Instance.AddExperience(10);
+            Instantiate(XPShard, transform.position, Quaternion.identity).InitRandomShard();
             HeinzDoofenshmirtzInstantinator.Destroy(this);
         }
 

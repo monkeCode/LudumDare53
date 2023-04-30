@@ -104,3 +104,4 @@ MonoBehaviour:
   damageDelay: 0.5
   atkDistance: 0.2
   _type: 4
+  XPShard: {fileID: 5297552437456271261, guid: 758621e82f795534abc1250901823a18, type: 3}

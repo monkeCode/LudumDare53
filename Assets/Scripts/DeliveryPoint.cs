@@ -11,7 +11,7 @@ using Range = UnityEngine.SocialPlatforms.Range;
 public class DeliveryPoint : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _timer;
-    private static List<DeliveryPoint> DeliveryPoints = new List<DeliveryPoint>();
+    public static List<DeliveryPoint> DeliveryPoints = new List<DeliveryPoint>();
     private static int TakeDeliveryCD = 30;
     private float NextDeliveryTime;
     public List<Debuff> debuffs;

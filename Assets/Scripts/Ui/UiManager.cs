@@ -73,6 +73,11 @@ public class UiManager : MonoBehaviour
         Instantiate(goldText, pos, Quaternion.identity).Init(money.ToString());
     }
 
+    public void ShowHealingText(int heal, Vector2 pos)
+    {
+        Instantiate(goldText, pos + damageTextOffset, Quaternion.identity).Init(heal.ToString());
+    }
+
     public void ShowDebuffIcons()
     {
         foreach (var debuff in currentDebuffIcons)
@@ -83,7 +88,6 @@ public class UiManager : MonoBehaviour
         var debuffs = Player.Player.Instance.GetDebuffsFromDeliveries();
         if (debuffs.Length == 0)
             return;
-        Debug.Log("Shown");
         var debuffIndex = 0;
         foreach (var debuff in debuffs)
         {

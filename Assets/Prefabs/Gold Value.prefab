@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 6809639721528982831}
   - component: {fileID: 6809639721528982830}
   - component: {fileID: 6809639721528982829}
+  - component: {fileID: 525146913005357576}
   m_Layer: 5
   m_Name: Gold Value
   m_TagString: Untagged
@@ -315,3 +316,16 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &525146913005357576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6809639721528982828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2267ae175f5ad7429ea32c4c64f76e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 6809639720680141938}

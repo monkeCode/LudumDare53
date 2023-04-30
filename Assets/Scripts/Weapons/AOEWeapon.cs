@@ -5,12 +5,13 @@ using System.Linq;
 using Entities;
 using UnityEngine;
 
+
 namespace Weapons
 {
     public class AOEWeapon: Weapon
     {
         public override int Damage => 5;
-        public override float Cooldown => 2;
+        public override float Cooldown => 2 * Player.Player.Instance.AtkCooldownModifier;
         
         private float _time;
         [SerializeField] private AOEWeaponHitZone leftHitZone;

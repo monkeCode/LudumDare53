@@ -26,6 +26,9 @@ namespace Player
         public int AtkCount => _atkCount;
         
         public int ExpToNextLvl => lvl * 300;
+
+        public int Lvl => lvl;
+        
         public static Player Instance { get; private set; }
         public UnityEvent onDeath = new();
 
@@ -140,7 +143,23 @@ namespace Player
 
         private void AddNewLvl()
         {
+            lvl++;
+            UiManager.Instance.ShowJustText("New Lvl", transform.position);
             maxHealth += 20;
+            if (lvl % 5 == 0)
+            {
+                regenDelayInSeconds *= 0.8f;
+            }
+
+            if (lvl % 7 == 0)
+            {
+                atkCooldownModifier *= 0.8f;
+            }
+
+            if (lvl % 15 == 0)
+            {
+                _atkCount++;
+            }
             //TODO: подумать че должно при уровне бафаться
         }
 

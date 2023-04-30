@@ -10,8 +10,7 @@ namespace Weapons
 {
     public class AOEWeapon: Weapon
     {
-        public override int Damage => 5;
-        public override float Cooldown => 2 * Player.Player.Instance.AtkCooldownModifier;
+        
         public float timeBetweenAttacks = 0.2f;
         
         private float _time;
@@ -20,29 +19,22 @@ namespace Weapons
         private AOEWeaponHitZone _activeZone;
         private static IReadOnlyList<Entity> AllMobs => HeinzDoofenshmirtzInstantinator.Instance.GetAllEntities();
         private static IReadOnlyList<RandomLoot> AllLoots => RandomLootSpawnPoint.Instance.allSpawnedLoots;
-        private bool _canAtk = true;
 
         private void Start()
         {
             _activeZone = rightHitZone;
         }
 
-        private IEnumerator UpdateCooldown()
-        {
-            yield return new WaitForSeconds(Cooldown);
-            _canAtk = true;
-        }
-
-        private void Update()
-        {
-            if(_canAtk)
-                Attack();
-        }
-
         public override void Attack()
         {
-            _canAtk = false;
             StartCoroutine(Atk());
+        }
+
+        public override void LvlUp()
+        {
+            Lvl++;
+            
+            Damage = Damage * Lvl/(Lvl-1);
         }
 
         private IEnumerator Atk()

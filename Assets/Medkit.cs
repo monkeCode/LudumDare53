@@ -12,7 +12,7 @@ public class Medkit : MonoBehaviour
         if (!col.gameObject.GetComponent<Player.Player>())
             return;
         UiManager.Instance.ShowHealingText(heal, Player.Player.Instance.transform.position);
-        Player.Player.Instance.TakeDamage(-heal);
+        Player.Player.Instance.Heal(heal);
         Destroy(gameObject);
     }
 }

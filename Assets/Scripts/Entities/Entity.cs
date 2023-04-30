@@ -87,5 +87,10 @@ namespace Entities
             hp = (int)(hp*hpCoef);
             damage = (int)(damageCoef*damage);
         }
+
+        public virtual void SpawnStart()
+        {
+            hp = maxHp;
+        }
     }
 }

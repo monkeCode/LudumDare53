@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55ca7f35843e76b44af3b810ff42c578, type: 3}
-  m_Name: Pumpkin
+  m_Name: Cyclop
   m_EditorClassIdentifier: 
-  _entity: {fileID: -254679187844869488, guid: f9cb0e1b4fd5d674e8ed3043952cb497, type: 3}
-  _count: 100
+  _entity: {fileID: 4781914677271065426, guid: 4a1fb0d6884b48e419f55e94061326c1, type: 3}
+  _count: 1

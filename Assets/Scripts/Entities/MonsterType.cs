@@ -4,6 +4,8 @@
     {
         Zombie,
         FuckingPumpkin,
-        Bat
+        Bat,
+        Cyclop,
+        Skeleton
     }
 }

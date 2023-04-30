@@ -10,7 +10,8 @@ public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
     [SerializeField] private Entity _zombie;
     [SerializeField] private Entity _bat;
     [SerializeField] private Entity _pumpkin;
-    
+    [SerializeField] private Entity _cyclop;
+    [SerializeField] private Entity _skeleton;
     public const int START_MOSTERS_COUNT = 100;
     
     private static HeinzDoofenshmirtzInstantinator _instance;
@@ -21,6 +22,8 @@ public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
         {MonsterType.Zombie, new Queue<Entity>()},
         {MonsterType.Bat, new Queue<Entity>()},
         {MonsterType.FuckingPumpkin, new Queue<Entity>()},
+        {MonsterType.Cyclop, new Queue<Entity>()},
+        {MonsterType.Skeleton, new Queue<Entity>()},
     };
     
     private List<Entity> _sceneEntities = new();
@@ -44,8 +47,11 @@ public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
                 MonsterType.Bat => _bat,
                 MonsterType.Zombie => _zombie,
                 MonsterType.FuckingPumpkin => _pumpkin,
-                _ => throw new ArgumentOutOfRangeException()
+                MonsterType.Skeleton => _skeleton,
+                _ => null
             };
+            if(en is null)
+                continue;
             for (int i = 0; i < START_MOSTERS_COUNT; i++)
             {
                 var entity = Instantiate(en, new Vector2(10000, 10000), Quaternion.identity);
@@ -63,11 +69,13 @@ public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
             entity.gameObject.SetActive(true);
             entity.transform.position = pos;
             Instance._sceneEntities.Add(entity);
+            entity.SpawnStart();
             return entity;
         }
         
         var entity2 = MonoBehaviour.Instantiate(en, pos, Quaternion.identity);
         Instance._sceneEntities.Add(entity2);
+        entity2.SpawnStart();
         return entity2;
     }
 

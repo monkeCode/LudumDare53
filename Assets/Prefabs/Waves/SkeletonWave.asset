@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55ca7f35843e76b44af3b810ff42c578, type: 3}
-  m_Name: Pumpkin
+  m_Script: {fileID: 11500000, guid: fbf6a0bd36f1c8845afc93668d97d9a5, type: 3}
+  m_Name: SkeletonWave
   m_EditorClassIdentifier: 
-  _entity: {fileID: -254679187844869488, guid: f9cb0e1b4fd5d674e8ed3043952cb497, type: 3}
-  _count: 100
+  _bigRadius: 5
+  _count: 200
+  _entity: {fileID: 2956027501481343452, guid: 782d67cd3b12ad74490b40434365ade1, type: 3}

@@ -12,6 +12,7 @@ namespace Weapons
     {
         public override int Damage => 5;
         public override float Cooldown => 2 * Player.Player.Instance.AtkCooldownModifier;
+        public float timeBetweenAttacks = 0.2f;
         
         private float _time;
         [SerializeField] private AOEWeaponHitZone leftHitZone;
@@ -52,7 +53,8 @@ namespace Weapons
                 {
                     mob.TakeDamage(Damage);
                 }
-                yield return StartCoroutine(ShowHitEffect(_activeZone.hitEffect));
+                ShowHitEffect(_activeZone);
+                yield return new WaitForSeconds(timeBetweenAttacks);
                 ChangeSide();
             }
             StartCoroutine(UpdateCooldown());
@@ -73,11 +75,10 @@ namespace Weapons
             _activeZone = _activeZone == leftHitZone ? rightHitZone : leftHitZone;
         }
 
-        private IEnumerator ShowHitEffect(GameObject effect)
+        private static void ShowHitEffect(AOEWeaponHitZone zone)
         {
-            effect.SetActive(true);
-            yield return new WaitForSeconds(0.2f);
-            effect.SetActive(false);
+            Debug.Log("Show hit effect");
+            zone.ShowHitEffect();
         }
     }
 }

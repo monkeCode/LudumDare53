@@ -17,6 +17,7 @@ public class Coin : MonoBehaviour
         if (!col.gameObject.GetComponent<Player.Player>())
             return;
         Player.Player.Instance.Money += money;
+        UiManager.Instance.ShowRewardText(money, transform.position + new Vector3(0, 0.5f, 0));
         Destroy(gameObject);
     }
 }

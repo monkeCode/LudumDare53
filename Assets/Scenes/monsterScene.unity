@@ -867,6 +867,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7442913279808199953, guid: 77eaf547a70cdac4591c781ea4c0f404, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442913279808199953, guid: 77eaf547a70cdac4591c781ea4c0f404, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442913279808199953, guid: 77eaf547a70cdac4591c781ea4c0f404, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1703650777}
+    - target: {fileID: 7442913279808199953, guid: 77eaf547a70cdac4591c781ea4c0f404, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442913279808199953, guid: 77eaf547a70cdac4591c781ea4c0f404, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShopUISetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442913279808199953, guid: 77eaf547a70cdac4591c781ea4c0f404, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UiManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442913279808199953, guid: 77eaf547a70cdac4591c781ea4c0f404, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442913279808199953, guid: 77eaf547a70cdac4591c781ea4c0f404, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8123818303999933356, guid: 77eaf547a70cdac4591c781ea4c0f404, type: 3}
       propertyPath: m_Name
       value: Shop UI
@@ -877,11 +909,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77eaf547a70cdac4591c781ea4c0f404, type: 3}
+--- !u!1 &1610436782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8123818303999933356, guid: 77eaf547a70cdac4591c781ea4c0f404, type: 3}
+  m_PrefabInstance: {fileID: 1582967855}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1701958061 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 616059733930033045, guid: 148c94a8db45dfc4b8481d781f7e42af, type: 3}
   m_PrefabInstance: {fileID: 1906891366}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1703650777 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1644723043007295401, guid: 1e132ed2c7b449c49856b718e948378f, type: 3}
+  m_PrefabInstance: {fileID: 1736427740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce4c0c14334e954796126968fe6bcf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1719361020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -946,6 +994,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1644723043007295401, guid: 1e132ed2c7b449c49856b718e948378f, type: 3}
+      propertyPath: ShopUI
+      value: 
+      objectReference: {fileID: 1610436782}
     - target: {fileID: 1644723043007295401, guid: 1e132ed2c7b449c49856b718e948378f, type: 3}
       propertyPath: canvas
       value: 

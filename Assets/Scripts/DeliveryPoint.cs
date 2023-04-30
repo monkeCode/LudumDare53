@@ -29,6 +29,7 @@ public class DeliveryPoint : MonoBehaviour
             return;
         
         CompleteDeliveries();
+        OpenShopMenu();
 
         if (NextDeliveryTime > 0)
         {
@@ -68,7 +69,7 @@ public class DeliveryPoint : MonoBehaviour
 
     private void OpenShopMenu()
     {
-        
+        UiManager.Instance.ShopUISetActive(true);
     }
 
     private void Update()

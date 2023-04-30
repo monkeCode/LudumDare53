@@ -16,6 +16,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private FlowingText goldText;
     [SerializeField] private GameObject iconExample;
     [SerializeField] private Canvas canvas;
+    [SerializeField] private GameObject ShopUI;
 
     private List<GameObject> currentDebuffIcons;
 
@@ -64,5 +65,11 @@ public class UiManager : MonoBehaviour
             currentDebuffIcons.Add(icon);
             debuffIndex++;
         }
+    }
+
+    public void ShopUISetActive(bool setActive)
+    {
+        ShopUI.SetActive(setActive);
+        Time.timeScale = setActive ? 0 : 1;
     }
 }

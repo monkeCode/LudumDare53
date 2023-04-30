@@ -14,6 +14,7 @@ public class UiManager : MonoBehaviour
 
     [SerializeField] private FlowingText _damageText;
     [SerializeField] private FlowingText goldText;
+    [SerializeField] private FlowingText healingText;
     [SerializeField] private GameObject iconExample;
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject ShopUI;
@@ -75,7 +76,7 @@ public class UiManager : MonoBehaviour
 
     public void ShowHealingText(int heal, Vector2 pos)
     {
-        Instantiate(goldText, pos + damageTextOffset, Quaternion.identity).Init(heal.ToString());
+        Instantiate(healingText, pos + damageTextOffset, Quaternion.identity).Init(heal.ToString());
     }
 
     public void ShowDebuffIcons()

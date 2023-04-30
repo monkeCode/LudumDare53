@@ -16,7 +16,7 @@ public class GameTimer : MonoBehaviour
     {
         var time = 15*60 - WaveGenerator.Timer;
         var min = (int)time / 60;
-        var sec = (int)(time - min*60);
+        var sec = ((int)(time - min*60)).ToString().PadLeft(2, '0');
         _text.SetText($"{min}:{sec}");
     }
 }

@@ -18,7 +18,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject ShopUI;
     [SerializeField] private PauseMenu PauseMenu;
-
+    [SerializeField] private Vector2 damageTextOffset = new Vector2(0.1f, 0.1f);
+    
     private List<GameObject> currentDebuffIcons;
 
     private float Yborder = 30;
@@ -64,7 +65,7 @@ public class UiManager : MonoBehaviour
 
     public void ShowDamageText(int damage, Vector2 pos)
     {
-        Instantiate(_damageText, pos, Quaternion.identity).Init(damage.ToString());
+        Instantiate(_damageText, pos+damageTextOffset, Quaternion.identity).Init(damage.ToString());
     }
 
     public void ShowRewardText(int money, Vector2 pos)

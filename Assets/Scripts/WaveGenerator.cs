@@ -21,6 +21,7 @@ public class WaveGenerator : MonoBehaviour
     {
         _activeBossDelay = _bossDelay;
         _activeSpecialDelay = _specialDelay;
+        Timer = 0;
     }
 
     private void Update()

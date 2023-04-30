@@ -17,6 +17,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject iconExample;
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject ShopUI;
+    [SerializeField] private PauseMenu PauseMenu;
 
     private List<GameObject> currentDebuffIcons;
 
@@ -32,6 +33,24 @@ public class UiManager : MonoBehaviour
         iconStep = new Vector3(iconExample.GetComponent<RectTransform>().rect.width, 0, 0);
         currentDebuffIcons = new List<GameObject>();
         DebuffIconPos = new Vector3(0, Screen.height - Yborder);
+        StartCoroutine(AddListeners());
+    }
+
+    private IEnumerator AddListeners()
+    {
+        yield return new WaitForSeconds(1);
+        PauseManager.Instance.onPauseOn.AddListener(ShowPauseMenu);
+        PauseManager.Instance.onPauseOff.AddListener(ClosePauseMenu);
+    }
+
+    private void ShowPauseMenu()
+    {
+        PauseMenu.gameObject.SetActive(true);
+    }
+
+    private void ClosePauseMenu()
+    {
+        PauseMenu.gameObject.SetActive(false);
     }
 
     public void ShowDamageText(int damage, Vector2 pos)

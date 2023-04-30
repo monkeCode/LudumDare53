@@ -29,6 +29,7 @@ public class DeliveryPoint : MonoBehaviour
             return;
         
         CompleteDeliveries();
+        OpenShopMenu();
 
         if (NextDeliveryTime > 0)
         {
@@ -64,6 +65,11 @@ public class DeliveryPoint : MonoBehaviour
         
         NextDeliveryTime = TakeDeliveryCD;
         return delivery;
+    }
+
+    private void OpenShopMenu()
+    {
+        UiManager.Instance.ShopUISetActive(true);
     }
 
     private void Update()

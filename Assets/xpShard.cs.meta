@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: dac79279b6ceae746b3b01a2f5b56dbc
+guid: d2a5b403c61f9834681c162f1eeadec5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - XPShard: {fileID: 5297552437456271261, guid: 758621e82f795534abc1250901823a18, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

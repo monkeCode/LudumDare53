@@ -19,6 +19,7 @@ namespace Weapons
         [SerializeField] private AOEWeaponHitZone rightHitZone;
         private AOEWeaponHitZone _activeZone;
         private static IReadOnlyList<Entity> AllMobs => HeinzDoofenshmirtzInstantinator.Instance.GetAllEntities();
+        private static IReadOnlyList<RandomLoot> AllLoots => RandomLootSpawnPoint.Instance.allSpawnedLoots;
         private bool _canAtk = true;
 
         private void Start()
@@ -49,9 +50,15 @@ namespace Weapons
             _activeZone = Player.MovementsController.Instance.Velocity.x > 0 ? rightHitZone : leftHitZone;
             for (int i = 0; i < Player.Player.Instance.AtkCount; i++)
             {
-                foreach (var mob in AllMobs.Where(mob => IsInsideZone(_activeZone, mob)).ToList())
+                foreach (var mob in AllMobs.Where(mob => IsInsideZone(_activeZone, mob.transform)).ToList())
                 {
                     mob.TakeDamage(Damage);
+                }
+
+                foreach (var loot in AllLoots.Where(loot => IsInsideZone(_activeZone, loot.transform)).ToList())
+                {
+                    Debug.LogWarning(AllLoots.Count);
+                    loot.TakeDamage(Damage);
                 }
                 ShowHitEffect(_activeZone);
                 yield return new WaitForSeconds(timeBetweenAttacks);
@@ -59,7 +66,7 @@ namespace Weapons
             }
             StartCoroutine(UpdateCooldown());
         }
-        private static bool IsInsideZone(AOEWeaponHitZone zone, Entity mob)
+        private static bool IsInsideZone(AOEWeaponHitZone zone, Transform mob)
         {
             var position = mob.transform.position;
             var mobX = position.x;
@@ -69,6 +76,7 @@ namespace Weapons
                    mobY >= zone.bottomRightY &&
                    mobY <= zone.topLeftY;
         }
+        
 
         private void ChangeSide()
         {

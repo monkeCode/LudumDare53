@@ -15,6 +15,7 @@ public class DeliveryPoint : MonoBehaviour
     private static int TakeDeliveryCD = 30;
     private float NextDeliveryTime;
     public List<Debuff> debuffs;
+    private bool PlayerInPoint;
 
     private void Start()
     {
@@ -27,18 +28,29 @@ public class DeliveryPoint : MonoBehaviour
     {
         if (!col.gameObject.GetComponent<Player.Player>())
             return;
+
+        PlayerInPoint = true;
+        UiManager.Instance.ShopHelperSetActive(true);
         
         CompleteDeliveries();
-        OpenShopMenu();
 
         if (NextDeliveryTime > 0)
         {
-            //NextDeliveryTime -= Time.deltaTime;
             return;
         }
 
         Player.Player.Instance.StartDelivery(GetNewDelivery());
     }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.gameObject.GetComponent<Player.Player>())
+            return;
+
+        PlayerInPoint = false;
+        UiManager.Instance.ShopHelperSetActive(false);
+    }
+    
 
     private void CompleteDeliveries()
     {
@@ -85,5 +97,8 @@ public class DeliveryPoint : MonoBehaviour
         }
 
         NextDeliveryTime = Mathf.Clamp(NextDeliveryTime - Time.deltaTime, 0, NextDeliveryTime);
+        
+        if (PlayerInPoint && Input.GetKeyDown(KeyCode.E))
+            OpenShopMenu();
     }
 }

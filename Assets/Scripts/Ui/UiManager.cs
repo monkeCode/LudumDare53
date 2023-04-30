@@ -18,6 +18,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject iconExample;
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject ShopUI;
+    [SerializeField] private GameObject ShopHelper;
     [SerializeField] private PauseMenu PauseMenu;
     [SerializeField] private Vector2 damageTextOffset = new Vector2(0.1f, 0.1f);
     
@@ -95,7 +96,6 @@ public class UiManager : MonoBehaviour
             var icon = Instantiate(iconExample, canvas.transform);
             icon.transform.position += iconStep * debuffIndex;
             icon.GetComponent<Image>().sprite = debuff.Icon;
-            // icon.transform.parent = canvas.transform;
             currentDebuffIcons.Add(icon);
             debuffIndex++;
         }
@@ -104,6 +104,7 @@ public class UiManager : MonoBehaviour
     public void ShopUISetActive(bool value)
     {
         ShopUI.SetActive(value);
+        ShopHelper.SetActive(!value);
         PauseManager.Instance.canOffPause = !value;
         if (value)
         {
@@ -114,4 +115,6 @@ public class UiManager : MonoBehaviour
             PauseManager.Instance.PauseOff();
         }
     }
+
+    public void ShopHelperSetActive(bool value) => ShopHelper.SetActive(value);
 }

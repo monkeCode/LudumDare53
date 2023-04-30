@@ -57,7 +57,6 @@ namespace Weapons
 
                 foreach (var loot in AllLoots.Where(loot => IsInsideZone(_activeZone, loot.transform)).ToList())
                 {
-                    Debug.LogWarning(AllLoots.Count);
                     loot.TakeDamage(Damage);
                 }
                 ShowHitEffect(_activeZone);

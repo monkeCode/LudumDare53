@@ -46,4 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _zombie: {fileID: 2170556768774635063, guid: 2bad5aad57c247449a753970860cd0f0, type: 3}
   _bat: {fileID: 2669979142612980455, guid: 79479cf1e8ce1b44d908dfba0a85fc0b, type: 3}
-  _pumpkin: {fileID: 2948295474564549868, guid: f9cb0e1b4fd5d674e8ed3043952cb497, type: 3}
+  _pumpkin: {fileID: -254679187844869488, guid: f9cb0e1b4fd5d674e8ed3043952cb497, type: 3}
+  _cyclop: {fileID: 4781914677271065426, guid: 4a1fb0d6884b48e419f55e94061326c1, type: 3}
+  _skeleton: {fileID: 2956027501481343452, guid: 782d67cd3b12ad74490b40434365ade1, type: 3}

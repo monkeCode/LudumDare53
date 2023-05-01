@@ -883,56 +883,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24bad8c41d0fda641bf5901521791240, type: 3}
---- !u!1 &951821330
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 951821332}
-  - component: {fileID: 951821331}
-  m_Layer: 0
-  m_Name: DebuffManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &951821331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951821330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eef6ec390774614478000c13f25fd2fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SlowDebuff: {fileID: 21300000, guid: d9bf588677ff29b4eafd2b08ac540e1d, type: 3}
-  InvertMovementDebuff: {fileID: 21300000, guid: f9976fb7cb4696340b55d4dffd1c2331, type: 3}
-  HealthDebuff: {fileID: 21300000, guid: a52eb05308c6d4b4c8e53826f79a1ffb, type: 3}
-  FragileDeliveryDebuff: {fileID: 21300000, guid: 0769b5c8b8aaeae458dda922c7a186ef, type: 3}
-  LessAttacksDebuff: {fileID: 21300000, guid: 1217d25867857174f811c8ccb627f8ed, type: 3}
-  LessAttackSpeedDebuff: {fileID: 21300000, guid: 884efc0a456042144a3428058a310570, type: 3}
---- !u!4 &951821332
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951821330}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &978756935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1668,6 +1618,63 @@ PrefabInstance:
       objectReference: {fileID: 8842848185079404266, guid: 4189906c084fa9a488d5cd3292271367, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab8aeb34273a35d40b3bae57b8a571e9, type: 3}
+--- !u!1001 &6296176551710613164
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6296176552105310904, guid: d41e3719467dc304399fe65821343803, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296176552105310904, guid: d41e3719467dc304399fe65821343803, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296176552105310904, guid: d41e3719467dc304399fe65821343803, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296176552105310904, guid: d41e3719467dc304399fe65821343803, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296176552105310904, guid: d41e3719467dc304399fe65821343803, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296176552105310904, guid: d41e3719467dc304399fe65821343803, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296176552105310904, guid: d41e3719467dc304399fe65821343803, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296176552105310904, guid: d41e3719467dc304399fe65821343803, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296176552105310904, guid: d41e3719467dc304399fe65821343803, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296176552105310904, guid: d41e3719467dc304399fe65821343803, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296176552105310904, guid: d41e3719467dc304399fe65821343803, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296176552105310910, guid: d41e3719467dc304399fe65821343803, type: 3}
+      propertyPath: m_Name
+      value: DebuffManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d41e3719467dc304399fe65821343803, type: 3}
 --- !u!1001 &6664727452337821400
 PrefabInstance:
   m_ObjectHideFlags: 0

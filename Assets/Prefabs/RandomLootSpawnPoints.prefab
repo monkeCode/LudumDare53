@@ -61,7 +61,9 @@ MonoBehaviour:
   - {fileID: 2900892192285568026}
   - {fileID: 8084129342780269143}
   - {fileID: 3496255194944874287}
-  RandomLoot: {fileID: 5518396147641248621, guid: 33f86b94e81221c4a9521d2c49da70fd, type: 3}
+  RandomLoot: {fileID: 1602810319734019154, guid: 33f86b94e81221c4a9521d2c49da70fd, type: 3}
+  allSpawnedLoots: []
+  distanceToSpawnPoint: 0
 --- !u!1 &471587785798173769
 GameObject:
   m_ObjectHideFlags: 0

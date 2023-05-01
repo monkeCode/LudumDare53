@@ -21,6 +21,8 @@ public class GoodEnding : MonoBehaviour
     {
         UiManager.Instance.FlashBang();
         yield return new WaitForSeconds(1f);
+        HeinzDoofenshmirtzInstantinator.TOTALYKIIIIIIIIIIIIIIIILL();
+        Instantiate(uhOhSociety, transform.position, Quaternion.identity);
         uhOhSociety.SetActive(true);
     }
 }

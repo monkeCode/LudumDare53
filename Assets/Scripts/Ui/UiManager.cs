@@ -204,6 +204,7 @@ public class UiManager : MonoBehaviour
             flashbang.color = color;
             yield return new WaitForSeconds(0.1f);
         }
+        flashbang.gameObject.SetActive(false);
     }
 
     public void ShopHelperSetActive(bool value) => ShopHelper.SetActive(value);

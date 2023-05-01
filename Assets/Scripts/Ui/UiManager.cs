@@ -142,20 +142,31 @@ public class UiManager : MonoBehaviour
 
     public void CreateShopTab(Weapon toBuy, Weapon toUpgrade, Weapon random, bool isTobuy)
     {
-        toBuyTab = Instantiate(shopToBuyTab, shopUiPanel);
-        toBuyTab.transform.position += ShopUIOffset;
-        toBuyTab.GetComponent<FillBuyWeaponData>().Fill(toBuy);
-        toUpgradeTab = Instantiate(shopToUpgradeTab, shopUiPanel);
-        toUpgradeTab.GetComponent<FillUpgradeWeaponData>().Fill(toUpgrade);
-        var lastTabType = shopToBuyTab;
-        if (!isTobuy)
-            lastTabType = toUpgradeTab;
-        randomTab = Instantiate(lastTabType, shopUiPanel);
-        randomTab.transform.position -= ShopUIOffset;
-        if (isTobuy)
-            randomTab.GetComponent<FillBuyWeaponData>().Fill(random);
-        else
-            randomTab.GetComponent<FillUpgradeWeaponData>().Fill(random);
+        if (toBuy != null)
+        {
+            toBuyTab = Instantiate(shopToBuyTab, shopUiPanel);
+            toBuyTab.transform.position += ShopUIOffset;
+            toBuyTab.GetComponent<FillBuyWeaponData>().Fill(toBuy);
+        }
+
+        if (toUpgrade != null)
+        {
+            toUpgradeTab = Instantiate(shopToUpgradeTab, shopUiPanel);
+            toUpgradeTab.GetComponent<FillUpgradeWeaponData>().Fill(toUpgrade);
+        }
+
+        if (random != null)
+        {
+            var lastTabType = shopToBuyTab;
+            if (!isTobuy)
+                lastTabType = toUpgradeTab;
+            randomTab = Instantiate(lastTabType, shopUiPanel);
+            randomTab.transform.position -= ShopUIOffset;
+            if (isTobuy)
+                randomTab.GetComponent<FillBuyWeaponData>().Fill(random);
+            else
+                randomTab.GetComponent<FillUpgradeWeaponData>().Fill(random);
+        }
     }
 
     public void ClearShop()

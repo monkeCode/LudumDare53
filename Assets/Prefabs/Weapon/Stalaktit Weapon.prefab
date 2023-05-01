@@ -46,9 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _coolDown: 4
   _damage: 15
-  weaponPic: {fileID: 0}
-  weaponName: 
-  Description: 
+  weaponPic: {fileID: 21300000, guid: 0fa42470c4e737c4bb97209b847ca175, type: 3}
+  weaponName: God's wrath
+  description: Purge the evil
   _searchRadius: 10
   speed: 15
   _prefab: {fileID: 8692795233762558077, guid: ab44abe07e105c34c94fef5399033723, type: 3}

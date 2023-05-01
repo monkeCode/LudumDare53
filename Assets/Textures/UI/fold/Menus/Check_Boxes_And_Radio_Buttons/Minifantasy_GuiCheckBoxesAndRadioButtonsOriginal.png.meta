@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,9 +42,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -127,7 +127,427 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 19
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aaf355c0a9f9ac40bdfffadd8fac638
+      internalID: -357835447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 20
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3781567d5695d1f47aeb53f3ae56d538
+      internalID: -1396329949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 20
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01b8b3f921d6b3a4e99399b3449e0b27
+      internalID: 808041776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_3
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 21
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abcaf170c66bdee4db0b6a52dfba91f9
+      internalID: 1274237058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_4
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 20
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb0dab0470621447bbdf70eba68f26e
+      internalID: -916990629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_5
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 21
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74e8a49ac2b792c4daeed93acd771b87
+      internalID: 1346176370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_6
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 20
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b53c949a341e8488840201e1341dd0
+      internalID: -17253208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_7
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 21
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d948804895ed9c4ebe19a290acf0275
+      internalID: 1853331317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_8
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 20
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45582420f715c8d4195b907c86656fc1
+      internalID: 1385461630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_9
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 21
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93db6e89a44ca7429897eb2019747ba
+      internalID: -620321319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_10
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 783b2f08b5ce58b44b49b5416e2781ca
+      internalID: -1670855230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_11
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 4
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f8c282dc3294b46b7350dfb285235e
+      internalID: 1076100951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_12
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 4
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b30fb4ac29ba54f839a5befb0b811c
+      internalID: 948057424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_13
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 5
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5995393e6c4fbaa468de21e9430cc3d6
+      internalID: 1359509437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_14
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 4
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aef88bd86fccd84d95a6b5abb813e23
+      internalID: 713747814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_15
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 5
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99aff0243bc2414448b615f66a544385
+      internalID: 1575826196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_16
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 4
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25af54079c351b41a871c7d85179ad1
+      internalID: 894856046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_17
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 5
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d97393613c2f94ab8daca12e06a4b3
+      internalID: -2127611737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_18
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 4
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4bb1e56774cb674e90e452afb26e6bf
+      internalID: -453673081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_19
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 5
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae6d06d6773b564d994b7bf6076f2d2
+      internalID: 1204957471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +558,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_0: -357835447
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_1: -1396329949
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_10: -1670855230
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_11: 1076100951
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_12: 948057424
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_13: 1359509437
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_14: 713747814
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_15: 1575826196
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_16: 894856046
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_17: -2127611737
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_18: -453673081
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_19: 1204957471
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_2: 808041776
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_3: 1274237058
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_4: -916990629
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_5: 1346176370
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_6: -17253208
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_7: 1853331317
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_8: 1385461630
+      Minifantasy_GuiCheckBoxesAndRadioButtonsOriginal_9: -620321319
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

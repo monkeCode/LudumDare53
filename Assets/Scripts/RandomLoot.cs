@@ -13,8 +13,15 @@ public class RandomLoot : MonoBehaviour, IDamageable
     [SerializeField] private GameObject coin;
     [SerializeField] private GameObject delivery;
     [SerializeField] private GameObject medkit;
-    
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip soundEffect;
 
+
+    void Start()
+    {
+        audioSource = Player.Player.Instance.GetComponent<AudioSource>();
+    }
+    
     public void TakeDamage(int damage)
     {
         Kill();
@@ -29,6 +36,7 @@ public class RandomLoot : MonoBehaviour, IDamageable
 
     private void GenerateLoot()
     {
+        audioSource.PlayOneShot(soundEffect);
         var rand = Random.Range(0, 100);
         if (rand <= coinChance)
             Instantiate(coin, transform.position, quaternion.identity);

@@ -88,7 +88,7 @@ public class DeliveryPoint : MonoBehaviour
     private void OpenShopMenu()
     {
         UiManager.Instance.ShopUISetActive(true);
-        if (!shopGenerated)
+        if (!shopGenerated || !ShopIsValid())
             GetShopGeneration();
         GenerateShop();
     }
@@ -97,7 +97,7 @@ public class DeliveryPoint : MonoBehaviour
     {
         weaponToBuy = WeaponManager.Instance.GetRandomToBuyWeapon();
         weaponToUpgrade = WeaponManager.Instance.GetRandomToUpgradeWeapon();
-        var random = WeaponManager.Instance.GetRandomWeapon();
+        var random = WeaponManager.Instance.GetRandomWeapon(weaponToBuy, weaponToUpgrade);
         weapon = random.Item1;
         isToBuy = random.Item2;
     }
@@ -106,6 +106,15 @@ public class DeliveryPoint : MonoBehaviour
     {
         UiManager.Instance.CreateShopTab(weaponToBuy, weaponToUpgrade, weapon, isToBuy);
         shopGenerated = true;
+    }
+
+    private bool ShopIsValid()
+    {
+        var weaponManager = WeaponManager.Instance;
+        var buyValid = weaponManager.ValidateWeapon(weaponToBuy);
+        if (isToBuy && buyValid)
+            return weaponManager.ValidateWeapon(weapon);
+        return buyValid;
     }
 
     private void Update()

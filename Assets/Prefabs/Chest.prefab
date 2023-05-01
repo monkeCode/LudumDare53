@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5518396147641248621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,3 +102,5 @@ MonoBehaviour:
   coin: {fileID: 1756769951578745196, guid: 24bad8c41d0fda641bf5901521791240, type: 3}
   delivery: {fileID: 1756769951578745196, guid: 1f096357c15901849ab875ad019db442, type: 3}
   medkit: {fileID: 1756769951578745196, guid: d4a3c8624aed8eb4cb41e58b0dc306e9, type: 3}
+  audioSource: {fileID: 0}
+  soundEffect: {fileID: 8300000, guid: e0e2f15192acaed41a058ba621a9d111, type: 3}

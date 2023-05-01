@@ -15,7 +15,7 @@ namespace DefaultNamespace
 
         private void TakeDamage(int before, int after)
         {
-            RewardRatio -= 0.01f * before-after;
+            RewardRatio -= 0.01f * (before-after);
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using Weapons;
 
@@ -46,22 +47,48 @@ public class WeaponManager : MonoBehaviour
 
     public Weapon GetRandomToBuyWeapon()
     {
-        return weaponsToBuy[Random.Range(0, weaponsToBuy.Count)];
+        return weaponsToBuy.Count == 0 ? null : weaponsToBuy[Random.Range(0, weaponsToBuy.Count)];
     }
 
     public Weapon GetRandomToUpgradeWeapon()
     {
         var weapons = WeaponLvls.Select(x => x.Key).ToArray();
-        return weapons[Random.Range(0, weapons.Length)];
+        return weapons.Length == 0 ? null : weapons[Random.Range(0, weapons.Length)];
     }
 
-    public (Weapon, bool) GetRandomWeapon()
+    public (Weapon, bool) GetRandomWeapon(Weapon toBuy, Weapon toUpgrade)
     {
         var isToBuy = true;
+        if (weaponsToBuy.Count == 1 && WeaponLvls.Count == 1)
+            return (null, true);
         if (WeaponLvls.Count == 1)
-            return (GetRandomToBuyWeapon(), isToBuy);
+            return (GetRandomToBuyWeaponExcept(toBuy), isToBuy);
+        if (weaponsToBuy.Count == 1)
+            return (GetRandomToUpgradeWeaponExcept(toUpgrade), !isToBuy);
         var rand = Random.Range(0, 2);
-        return rand == 0 ? (GetRandomToBuyWeapon(), isToBuy) : (GetRandomToUpgradeWeapon(), !isToBuy);
+        return rand == 0 ? (GetRandomToBuyWeaponExcept(toBuy), isToBuy) : (GetRandomToUpgradeWeaponExcept(toUpgrade), !isToBuy);
+    }
+
+    private Weapon GetRandomToBuyWeaponExcept(Weapon toBuy)
+    {
+        var weapon = toBuy;
+        while (weapon == toBuy)
+            weapon = weaponsToBuy[Random.Range(0, weaponsToBuy.Count)];
+        return weapon;
+    }
+
+    private Weapon GetRandomToUpgradeWeaponExcept(Weapon toUpgrade)
+    {
+        var weapons = WeaponLvls.Select(x => x.Key).ToArray();
+        var weapon = toUpgrade;
+        while (weapon == toUpgrade)
+            weapon = weapons[Random.Range(0, weapons.Length)];
+        return weapon;
+    }
+
+    public bool ValidateWeapon(Weapon weapon)
+    {
+        return weaponsToBuy.Contains(weapon);
     }
 
 

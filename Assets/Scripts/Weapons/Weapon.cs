@@ -11,6 +11,9 @@ namespace Weapons
     {
         [SerializeField] private float _coolDown;
         [SerializeField] private int _damage;
+        [SerializeField] private Sprite weaponPic;
+        [SerializeField] private string weaponName;
+        [SerializeField] private string Description;
         public virtual int Damage
         {
             get => _damage;

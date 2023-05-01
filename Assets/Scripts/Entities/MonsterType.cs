@@ -6,6 +6,7 @@
         FuckingPumpkin,
         Bat,
         Cyclop,
-        Skeleton
+        Skeleton,
+        Wolf
     }
 }

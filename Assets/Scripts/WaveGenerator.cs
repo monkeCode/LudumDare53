@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -16,6 +17,8 @@ public class WaveGenerator : MonoBehaviour
     private float _activeBossDelay;
 
     public static float Timer { get; private set; }
+
+    public static event Action TimeEnded;
 
     private void Start()
     {
@@ -51,6 +54,8 @@ public class WaveGenerator : MonoBehaviour
         }
         _activeBossDelay -= Time.deltaTime;
         _activeSpecialDelay -= Time.deltaTime;
+        if(Timer > 15*60)
+            TimeEnded?.Invoke();
     }
 
 }

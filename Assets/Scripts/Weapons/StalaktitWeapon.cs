@@ -19,7 +19,7 @@ namespace Weapons
                 StartCoroutine(UpdateCooldown());
                 return;
             }
-            for (int i = 0; i < Player.Player.Instance.AtkCount * 3; i++)
+            for (int i = 0; i < Player.Player.Instance.AtkCount * 2; i++)
             {
                 var en = entis[Random.Range(0, entis.Count)];
                 var position = new Vector2(en.transform.position.x, en.transform.position.y+15);
@@ -43,7 +43,7 @@ namespace Weapons
         public override void LvlUp()
         {
             Lvl++;
-            Damage = Damage * Lvl / (Lvl - 1);
+            Damage = Damage * Lvl / (Lvl - 1)/2;
         }
     }
 }

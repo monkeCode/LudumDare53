@@ -48,6 +48,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f01cc6a959714ae46b2f1e64d98b5d89, type: 2}
   - {fileID: 11400000, guid: 5b1e6b8bc8111d048965389ca2cee5ed, type: 2}
   - {fileID: 11400000, guid: b1e43e02df6517047b0fca1b9ec7ff35, type: 2}
+  - {fileID: 11400000, guid: b1e43e02df6517047b0fca1b9ec7ff35, type: 2}
+  - {fileID: 11400000, guid: 5b1e6b8bc8111d048965389ca2cee5ed, type: 2}
   _specialWaves:
   - {fileID: 11400000, guid: b8dfdcb673fcba540b8c568fb884d067, type: 2}
   - {fileID: 11400000, guid: 833ae3741d4d6e348bf70d09e761a7ea, type: 2}

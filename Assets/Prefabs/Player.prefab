@@ -107,7 +107,7 @@ MonoBehaviour:
   health: 100
   lvl: 1
   currentExp: 0
-  _atkCount: 3
+  _atkCount: 2
   atkCooldownModifier: 1
   regenDelayInSeconds: 1
   regenValue: 1

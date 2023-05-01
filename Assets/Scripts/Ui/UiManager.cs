@@ -26,6 +26,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private Vector2 damageTextOffset = new Vector2(0.1f, 0.1f);
     [SerializeField] private GameObject shopToBuyTab;
     [SerializeField] private GameObject shopToUpgradeTab;
+    [SerializeField] private Transform shopUiPanel;
     private GameObject toBuyTab;
     private GameObject toUpgradeTab;
     private GameObject randomTab;
@@ -141,14 +142,16 @@ public class UiManager : MonoBehaviour
 
     public void CreateShopTab(Weapon toBuy, Weapon toUpgrade, Weapon random, bool isTobuy)
     {
-        toBuyTab = Instantiate(shopToBuyTab);
+        toBuyTab = Instantiate(shopToBuyTab, shopUiPanel);
+        toBuyTab.transform.position += ShopUIOffset;
         toBuyTab.GetComponent<FillBuyWeaponData>().Fill(toBuy);
-        toUpgradeTab = Instantiate(shopToUpgradeTab, ShopUIOffset, quaternion.identity);
+        toUpgradeTab = Instantiate(shopToUpgradeTab, shopUiPanel);
         toUpgradeTab.GetComponent<FillUpgradeWeaponData>().Fill(toUpgrade);
         var lastTabType = shopToBuyTab;
         if (!isTobuy)
             lastTabType = toUpgradeTab;
-        randomTab = Instantiate(lastTabType, ShopUIOffset * 2, quaternion.identity);
+        randomTab = Instantiate(lastTabType, shopUiPanel);
+        randomTab.transform.position -= ShopUIOffset;
         if (isTobuy)
             randomTab.GetComponent<FillBuyWeaponData>().Fill(random);
         else

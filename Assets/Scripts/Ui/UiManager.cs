@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
+using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -30,6 +31,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject shopToUpgradeTab;
     [SerializeField] private Transform shopUiPanel;
     [SerializeField] private Image flashbang;
+    [SerializeField] private TextMeshProUGUI ending;
     private GameObject toBuyTab;
     private GameObject toUpgradeTab;
     private GameObject randomTab;
@@ -192,10 +194,20 @@ public class UiManager : MonoBehaviour
     public void FlashBang()
     {
         flashbang.gameObject.SetActive(true);
-        StartCoroutine(Flashbang());
+        StartCoroutine(Flashbang(false));
     }
 
-    private IEnumerator Flashbang()
+    public void DarkEnd()
+    {
+        flashbang.gameObject.SetActive(true);
+        var color = flashbang.color;
+        color = Color.black;
+        color.a = 0;
+        flashbang.color = color;
+        StartCoroutine(Flashbang(true));
+    }
+
+    private IEnumerator Flashbang(bool badEnding)
     {
         for (var i = 0; i < 10; i++)
         {
@@ -204,7 +216,11 @@ public class UiManager : MonoBehaviour
             flashbang.color = color;
             yield return new WaitForSeconds(0.1f);
         }
-        flashbang.gameObject.SetActive(false);
+        flashbang.gameObject.SetActive(badEnding);
+        ending.gameObject.SetActive(true);
+        if (badEnding)
+            ending.text = "Bad ending";
+
     }
 
     public void ShopHelperSetActive(bool value) => ShopHelper.SetActive(value);

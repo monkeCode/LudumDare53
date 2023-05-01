@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ArrowToDestination : MonoBehaviour
 {
-
+    [SerializeField] private float borderSize = 200f;
+    
     private Camera cam;
-    private float borderSize = 150f;
     private bool isOffScreen;
     private Vector3 vectorUp = new Vector3(0, 2, 0); 
     

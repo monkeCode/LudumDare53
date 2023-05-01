@@ -17,10 +17,10 @@ namespace DefaultNamespace
             Debuff = debuff;
         }
 
-        private float CalculateReward(DeliveryPoint departure, DeliveryPoint destination, Debuff debuff)
+        private static float CalculateReward(DeliveryPoint departure, DeliveryPoint destination, Debuff debuff)
         {
             var distance = Vector2.Distance(departure.transform.position, destination.transform.position);
-            var reward = distance * debuff.RewardRatio;
+            var reward = distance/2 * debuff.RewardRatio;
             return reward;
         }
     }

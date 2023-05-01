@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: SkeletonWave
   m_EditorClassIdentifier: 
   _bigRadius: 5
-  _count: 200
+  _count: 100
   _entity: {fileID: 2956027501481343452, guid: 782d67cd3b12ad74490b40434365ade1, type: 3}
+  _countWaves: 5
+  _delay: 5

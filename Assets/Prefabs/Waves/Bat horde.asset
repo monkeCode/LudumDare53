@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bat horde
   m_EditorClassIdentifier: 
   _entity: {fileID: 2669979142612980455, guid: 79479cf1e8ce1b44d908dfba0a85fc0b, type: 3}
-  _count: 10
+  _count: 5
   _density: 1

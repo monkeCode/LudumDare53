@@ -43,16 +43,12 @@ public class RandomLootSpawnPoint : MonoBehaviour
 
     private void SetSpawnPointsPositions()
     {
-        var x = transform.position.x;
-        var y = transform.position.y;
-        LootSpawnPoints[0].position = new Vector3(x, y + distanceToSpawnPoint);
-        LootSpawnPoints[1].position = new Vector3(x + diagonalDistance, y +diagonalDistance);
-        LootSpawnPoints[2].position = new Vector3(x + distanceToSpawnPoint, y);
-        LootSpawnPoints[3].position = new Vector3(x + diagonalDistance, y + -diagonalDistance);
-        LootSpawnPoints[4].position = new Vector3(x, y + -distanceToSpawnPoint);
-        LootSpawnPoints[5].position = new Vector3(x + -diagonalDistance, y + -diagonalDistance);
-        LootSpawnPoints[6].position = new Vector3(x + -distanceToSpawnPoint, y);
-        LootSpawnPoints[7].position = new Vector3(x + -diagonalDistance, y + diagonalDistance);
+        for (int i = 0; i < LootSpawnPoints.Count; i++)
+        {
+            var angle = 2 * Mathf.PI / LootSpawnPoints.Count * i;
+            LootSpawnPoints[i].position = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle)) *
+                                          distanceToSpawnPoint + transform.position;
+        }
     }
     
 }

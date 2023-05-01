@@ -12,8 +12,10 @@ public class GoodEnding : MonoBehaviour
 
     private void Cringe()
     {
-
-        StartCoroutine(UltraCringe());
+        if (Player.Player.Instance.Money > 1000)
+            StartCoroutine(UltraCringe());
+        else
+            StartCoroutine(UltraCringeBad());
 
     }
 
@@ -24,5 +26,11 @@ public class GoodEnding : MonoBehaviour
         HeinzDoofenshmirtzInstantinator.TOTALYKIIIIIIIIIIIIIIIILL();
         Instantiate(uhOhSociety, transform.position, Quaternion.identity);
         uhOhSociety.SetActive(true);
+    }
+
+    private IEnumerator UltraCringeBad()
+    {
+        UiManager.Instance.DarkEnd();
+        yield return new WaitForSeconds(1f);
     }
 }

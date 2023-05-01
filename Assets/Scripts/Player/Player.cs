@@ -90,8 +90,8 @@ namespace Player
         {
             health += healing;
 
-            if (health > 100)
-                health = 100;
+            if (health > maxHealth)
+                health = maxHealth;
             HpChanged?.Invoke(health, maxHealth);
         }
 

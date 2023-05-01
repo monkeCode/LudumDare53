@@ -5,7 +5,9 @@ using DefaultNamespace;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Weapons;
 
 public class UiManager : MonoBehaviour
 {
@@ -22,6 +24,12 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject ShopHelper;
     [SerializeField] private PauseMenu PauseMenu;
     [SerializeField] private Vector2 damageTextOffset = new Vector2(0.1f, 0.1f);
+    [SerializeField] private GameObject shopToBuyTab;
+    [SerializeField] private GameObject shopToUpgradeTab;
+    private GameObject toBuyTab;
+    private GameObject toUpgradeTab;
+    private GameObject randomTab;
+     private Vector3 ShopUIOffset = new Vector3(0, 120, 0);
     
     private List<GameObject> currentDebuffIcons;
 
@@ -119,7 +127,31 @@ public class UiManager : MonoBehaviour
         else
         {
             PauseManager.Instance.PauseOff();
+            ClearShop();
         }
+    }
+
+    public void CreateShopTab(Weapon toBuy, Weapon toUpgrade, Weapon random, bool isTobuy)
+    {
+        toBuyTab = Instantiate(shopToBuyTab);
+        toBuyTab.GetComponent<FillBuyWeaponData>().Fill(toBuy);
+        toUpgradeTab = Instantiate(shopToUpgradeTab, ShopUIOffset, quaternion.identity);
+        toUpgradeTab.GetComponent<FillUpgradeWeaponData>().Fill(toUpgrade);
+        var lastTabType = shopToBuyTab;
+        if (!isTobuy)
+            lastTabType = toUpgradeTab;
+        randomTab = Instantiate(lastTabType, ShopUIOffset * 2, quaternion.identity);
+        if (isTobuy)
+            randomTab.GetComponent<FillBuyWeaponData>().Fill(random);
+        else
+            randomTab.GetComponent<FillUpgradeWeaponData>().Fill(random);
+    }
+
+    public void ClearShop()
+    {
+        Destroy(toBuyTab);
+        Destroy(toUpgradeTab);
+        Destroy(randomTab);
     }
 
     public void ShopHelperSetActive(bool value) => ShopHelper.SetActive(value);

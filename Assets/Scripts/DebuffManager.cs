@@ -23,8 +23,7 @@ public class DebuffManager : MonoBehaviour
             LessAttackSpeedDebuff);
             //Двойной урон
             // Уменьшен урон
-        // Уменьшен атак спид
-        Debuffs.Add(speedDebuff);
+            Debuffs.Add(speedDebuff);
         Debuffs.Add(invertDebuff);
         Debuffs.Add(healthDebuff);
         Debuffs.Add(fragileDeliveryDebuff);

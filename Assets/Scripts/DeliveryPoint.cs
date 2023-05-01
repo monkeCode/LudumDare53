@@ -5,6 +5,7 @@ using System.Globalization;
 using DefaultNamespace;
 using TMPro;
 using UnityEngine;
+using Weapons;
 using Random = UnityEngine.Random;
 using Range = UnityEngine.SocialPlatforms.Range;
 
@@ -16,6 +17,11 @@ public class DeliveryPoint : MonoBehaviour
     private float NextDeliveryTime;
     public List<Debuff> debuffs;
     private bool PlayerInPoint;
+    private bool shopGenerated;
+    private Weapon weaponToBuy;
+    private Weapon weaponToUpgrade;
+    private Weapon weapon;
+    private bool isToBuy;
 
     private void Start()
     {
@@ -82,6 +88,24 @@ public class DeliveryPoint : MonoBehaviour
     private void OpenShopMenu()
     {
         UiManager.Instance.ShopUISetActive(true);
+        if (!shopGenerated)
+            GetShopGeneration();
+        GenerateShop();
+    }
+
+    private void GetShopGeneration()
+    {
+        weaponToBuy = WeaponManager.Instance.GetRandomToBuyWeapon();
+        weaponToUpgrade = WeaponManager.Instance.GetRandomToUpgradeWeapon();
+        var random = WeaponManager.Instance.GetRandomWeapon();
+        weapon = random.Item1;
+        isToBuy = random.Item2;
+    }
+
+    private void GenerateShop()
+    {
+        UiManager.Instance.CreateShopTab(weaponToBuy, weaponToUpgrade, weapon, isToBuy);
+        shopGenerated = true;
     }
 
     private void Update()
@@ -94,6 +118,7 @@ public class DeliveryPoint : MonoBehaviour
         else
         {
             _timer.alpha = 0;
+            shopGenerated = false;
         }
 
         NextDeliveryTime = Mathf.Clamp(NextDeliveryTime - Time.deltaTime, 0, NextDeliveryTime);

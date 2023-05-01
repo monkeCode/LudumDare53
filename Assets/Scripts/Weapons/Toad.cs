@@ -20,6 +20,7 @@ namespace Weapons
         private SpriteRenderer _renderer;
         private float _distance;
         private float Alpha => Mathf.PI/_distance;
+
         private void Start()
         {
             _renderer = GetComponent<SpriteRenderer>();
@@ -70,6 +71,7 @@ namespace Weapons
 
         public override void LvlUp()
         {
+            Lvl++;
             _atkRadius *= 1.1f;
             transform.localScale = new Vector3(_atkRadius * 1.7f, _atkRadius * 1.7f, 1);
             Damage = Damage * Lvl / (Lvl - 1);

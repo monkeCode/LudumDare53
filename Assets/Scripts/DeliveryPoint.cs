@@ -5,6 +5,7 @@ using System.Globalization;
 using DefaultNamespace;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Weapons;
 using Random = UnityEngine.Random;
 using Range = UnityEngine.SocialPlatforms.Range;
@@ -17,6 +18,7 @@ public class DeliveryPoint : MonoBehaviour
     private float NextDeliveryTime;
     public List<Debuff> debuffs;
     private bool PlayerInPoint;
+    private bool shopIsOpen;
     private bool shopGenerated;
     private Weapon weaponToBuy;
     private Weapon weaponToUpgrade;
@@ -131,8 +133,10 @@ public class DeliveryPoint : MonoBehaviour
         }
 
         NextDeliveryTime = Mathf.Clamp(NextDeliveryTime - Time.deltaTime, 0, NextDeliveryTime);
-        
+
         if (PlayerInPoint && Input.GetKeyDown(KeyCode.E))
+        {
             OpenShopMenu();
+        }
     }
 }

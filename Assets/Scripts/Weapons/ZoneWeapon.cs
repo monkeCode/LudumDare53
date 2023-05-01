@@ -13,6 +13,7 @@ namespace Weapons
         [SerializeField] private AudioClip _audioClip;
         private Sequence _effectSequence;
         
+        
         public override void Attack()
         {
             ShowEffect();

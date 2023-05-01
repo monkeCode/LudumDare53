@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Entities;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Weapons
 {
@@ -11,9 +12,9 @@ namespace Weapons
     {
         [SerializeField] private float _coolDown;
         [SerializeField] private int _damage;
-        [SerializeField] private Sprite weaponPic;
-        [SerializeField] private string weaponName;
-        [SerializeField] private string Description;
+        public Sprite weaponPic;
+        public string weaponName;
+        public string description;
         public virtual int Damage
         {
             get => _damage;

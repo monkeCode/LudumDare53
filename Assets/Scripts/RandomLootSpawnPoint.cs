@@ -23,7 +23,7 @@ public class RandomLootSpawnPoint : MonoBehaviour
             _instance = this;
         else
             Destroy(gameObject);
-        diagonalDistance = (float)Math.Sqrt(distanceToSpawnPoint);
+        diagonalDistance = (float)Math.Sqrt(distanceToSpawnPoint * distanceToSpawnPoint);
         SetSpawnPointsPositions();
         StartCoroutine(SpawnLoot());
     }

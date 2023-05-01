@@ -48,7 +48,7 @@ namespace Weapons
             float startedY = transform.position.y;
             _audio.clip = _audios[Random.Range(0, _audios.Length)];
             _audio.Play();
-            while (Vector2.Distance(_target, transform.position) > 0.2)
+            for(float i = 0; i < _speed; i+= Time.deltaTime )
             {
                 Debug.Log(_target.x);
                 _renderer.sprite = _jumpSprite;

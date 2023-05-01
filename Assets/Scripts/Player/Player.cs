@@ -21,6 +21,10 @@ namespace Player
         [SerializeField] private float atkCooldownModifier = 1;
         [SerializeField] private float regenDelayInSeconds = 1;
         [SerializeField] private int regenValue = 1;
+
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioClip levelUpSound;
+        [SerializeField] private AudioClip XPSound;
         public float AtkCooldownModifier => atkCooldownModifier;
 
         public int AtkCount => _atkCount;
@@ -132,6 +136,7 @@ namespace Player
 
         public void AddExperience(int exp)
         {
+            audioSource.PlayOneShot(XPSound);
             currentExp += exp;
             if (currentExp > ExpToNextLvl)
             {
@@ -143,6 +148,7 @@ namespace Player
 
         private void AddNewLvl()
         {
+            audioSource.PlayOneShot(levelUpSound);
             lvl++;
             var text = $"New lvl {lvl}\n";
             

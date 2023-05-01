@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 namespace Weapons
 {
     [RequireComponent(typeof(SpriteRenderer))]
+    [RequireComponent(typeof(AudioSource))]
     public class Toad : Weapon
     {
         [SerializeField] private Sprite _idleSprite;
@@ -15,15 +16,17 @@ namespace Weapons
         [SerializeField] private float _atkRadius;
         [SerializeField] private float _searchRadius;
         [SerializeField] private float _height = 1;
-
+        [SerializeField] private AudioClip[] _audios;
         private Vector2 _target;
         private SpriteRenderer _renderer;
         private float _distance;
+        private AudioSource _audio;
         private float Alpha => Mathf.PI/_distance;
 
         private void Start()
         {
             _renderer = GetComponent<SpriteRenderer>();
+            _audio = GetComponent<AudioSource>();
         }
 
         public override void Attack()
@@ -36,7 +39,6 @@ namespace Weapons
         {
             _target = SearchTarget();
             _distance = Mathf.Abs(_target.x - transform.position.x);
-            
         }
 
         private IEnumerator Atk()
@@ -44,7 +46,9 @@ namespace Weapons
             float totalX = 0;
             float totalY = 0;
             float startedY = transform.position.y;
-            while (Vector2.Distance(_target, transform.position) > 0.1)
+            _audio.clip = _audios[Random.Range(0, _audios.Length)];
+            _audio.Play();
+            while (Vector2.Distance(_target, transform.position) > 0.2)
             {
                 Debug.Log(_target.x);
                 _renderer.sprite = _jumpSprite;

@@ -106,4 +106,4 @@ MonoBehaviour:
   XPShard: {fileID: 5297552437456271261, guid: 758621e82f795534abc1250901823a18, type: 3}
   _hpCoef: 1
   _dmageCoef: 1
-  _toPlayerDis: 17
+  _toPlayerDis: 30

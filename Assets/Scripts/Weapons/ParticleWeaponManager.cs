@@ -26,7 +26,7 @@ namespace Weapons
             if (_activeWeapons.Count <= Player.Player.Instance.AtkCount) return;
             var weapon = _activeWeapons[0];
             _activeWeapons.Remove(weapon);
-            Destroy(weapon);
+            Destroy(weapon.gameObject);
         }
 
         public override void LvlUp()

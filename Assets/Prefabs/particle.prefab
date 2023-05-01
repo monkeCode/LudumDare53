@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4312844592439614071}
   m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 3.3429496, y: 18.524393, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 771366353, guid: c18113d8321e13e4ca8a3a52c8dd1294, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,6 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _coolDown: 0.2
   _damage: 3
+  weaponPic: {fileID: 0}
+  weaponName: 
+  Description: 
   _speedCoef: 15
   _searchRadius: 10
   _atkRadius: 1

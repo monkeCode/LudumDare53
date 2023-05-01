@@ -528,11 +528,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3296764005799089126, guid: 9e32f26e9cea45e4b8df8aa4cedfb41b, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6562700053897135096, guid: 9e32f26e9cea45e4b8df8aa4cedfb41b, type: 3}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8690292013783428544, guid: 9e32f26e9cea45e4b8df8aa4cedfb41b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8690292014494901393, guid: 9e32f26e9cea45e4b8df8aa4cedfb41b, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8690292014494901393, guid: 9e32f26e9cea45e4b8df8aa4cedfb41b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8690292014494901406, guid: 9e32f26e9cea45e4b8df8aa4cedfb41b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8690292014494901407, guid: 9e32f26e9cea45e4b8df8aa4cedfb41b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9e32f26e9cea45e4b8df8aa4cedfb41b, type: 3}
 --- !u!114 &583556032 stripped
 MonoBehaviour:
@@ -1031,6 +1052,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2611100707622574578, guid: d7ac3cc9f524d9d4a817ab70f3ba5e9c, type: 3}
   m_PrefabInstance: {fileID: 8390210498512681596}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1394802286 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1789026890595717248, guid: 9e32f26e9cea45e4b8df8aa4cedfb41b, type: 3}
+  m_PrefabInstance: {fileID: 583556031}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8748d174720a65c4d81163eb8509a7fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1582967855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1257,6 +1289,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 2006572417}
+    - target: {fileID: 1644723043007295401, guid: 1e132ed2c7b449c49856b718e948378f, type: 3}
+      propertyPath: textText
+      value: 
+      objectReference: {fileID: 1394802286}
     - target: {fileID: 1644723043007295401, guid: 1e132ed2c7b449c49856b718e948378f, type: 3}
       propertyPath: PauseMenu
       value: 

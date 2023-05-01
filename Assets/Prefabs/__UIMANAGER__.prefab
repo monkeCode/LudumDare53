@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damageText: {fileID: 1067418829567785544, guid: 133b9fed337565e488567f7a005d5f31, type: 3}
   goldText: {fileID: 1067418829567785544, guid: 3f6269e22e049c24bb829ba01a652d20, type: 3}
-  healingText: {fileID: 1067418829567785544, guid: aa4c17fbd4865954496cfe47b388c03f, type: 3}
+  healingText: {fileID: 1067418829567785544, guid: 1460aa6f2aacab64e8e4884b1187d7a4, type: 3}
   textText: {fileID: 1067418829567785544, guid: aa4c17fbd4865954496cfe47b388c03f, type: 3}
   iconExample: {fileID: 8859181799267729843, guid: b64f578edf94dcb419cef61a438a8d3c, type: 3}
   canvas: {fileID: 0}

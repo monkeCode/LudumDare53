@@ -144,7 +144,13 @@ namespace Player
         private void AddNewLvl()
         {
             lvl++;
-            UiManager.Instance.ShowJustText("New Lvl", transform.position);
+            var text = $"New lvl {lvl}\n";
+            
+            var lastHealth = maxHealth;
+            var lastRegenDelay = regenDelayInSeconds;
+            var lastAtkCooldown = atkCooldownModifier;
+            var lastCount = _atkCount;
+            
             maxHealth += 20;
             if (lvl % 5 == 0)
             {
@@ -160,7 +166,13 @@ namespace Player
             {
                 _atkCount++;
             }
-            //TODO: подумать че должно при уровне бафаться
+
+            text += $"Health: {lastHealth} => {maxHealth} (+{maxHealth - lastHealth})\n" +
+                    $"Cooldown: {lastAtkCooldown} => {atkCooldownModifier} (-{lastAtkCooldown - atkCooldownModifier})\n" +
+                    $"Regen delay: {lastRegenDelay} => {regenDelayInSeconds} (-{lastRegenDelay - regenDelayInSeconds})\n" +
+                    $"Atk count: {lastCount} => {_atkCount} (+{_atkCount - lastCount})\n";
+            
+            UiManager.Instance.ShowJustText(text);
         }
 
         public void DropDelivery()

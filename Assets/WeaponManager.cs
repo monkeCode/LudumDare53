@@ -59,11 +59,11 @@ public class WeaponManager : MonoBehaviour
     public (Weapon, bool) GetRandomWeapon(Weapon toBuy, Weapon toUpgrade)
     {
         var isToBuy = true;
-        if (weaponsToBuy.Count == 1 && WeaponLvls.Count == 1)
+        if (weaponsToBuy.Count <= 1 && WeaponLvls.Count <= 1 )
             return (null, true);
-        if (WeaponLvls.Count == 1)
+        if (WeaponLvls.Count <= 1)
             return (GetRandomToBuyWeaponExcept(toBuy), isToBuy);
-        if (weaponsToBuy.Count == 1)
+        if (weaponsToBuy.Count <= 1)
             return (GetRandomToUpgradeWeaponExcept(toUpgrade), !isToBuy);
         var rand = Random.Range(0, 2);
         return rand == 0 ? (GetRandomToBuyWeaponExcept(toBuy), isToBuy) : (GetRandomToUpgradeWeaponExcept(toUpgrade), !isToBuy);

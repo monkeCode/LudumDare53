@@ -141,12 +141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92322b55c7f08f1448fffa6ec47d1bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 5
   maxHp: 5
   speed: 28
-  damage: 5
+  damage: 3
   damageDelay: 0.5
-  atkDistance: 0.19
+  atkDistance: 0.15
   _type: 2
   XPShard: {fileID: 5297552437456271261, guid: 758621e82f795534abc1250901823a18, type: 3}
   _hpCoef: 1.1

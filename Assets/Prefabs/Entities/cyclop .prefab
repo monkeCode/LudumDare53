@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 400
-  speed: 12
-  damage: 20
-  damageDelay: 0.5
+  speed: 6
+  damage: 10
+  damageDelay: 1
   atkDistance: 0.7
   _type: 3
   XPShard: {fileID: 5297552437456271261, guid: 758621e82f795534abc1250901823a18, type: 3}

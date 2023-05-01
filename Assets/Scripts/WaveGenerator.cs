@@ -54,13 +54,9 @@ public class WaveGenerator : MonoBehaviour
         }
         _activeBossDelay -= Time.deltaTime;
         _activeSpecialDelay -= Time.deltaTime;
-        Debug.Log(Timer);
-        if (Timer > 15 )
-        {
-            Debug.Log("IMBAAAAAAAAAAAAA");
-            TimeEnded?.Invoke();
-            gameObject.SetActive(false);
-        }
+        if (!(Timer > 15 * 60)) return;
+        TimeEnded?.Invoke();
+        gameObject.SetActive(false);
 
     }
 

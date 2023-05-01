@@ -32,7 +32,7 @@ namespace Player
 
         public int AtkCount => _atkCount;
         
-        public int ExpToNextLvl => lvl * 300;
+        public int ExpToNextLvl => lvl * 200;
 
         public int Lvl => lvl;
         
@@ -173,16 +173,13 @@ namespace Player
             if (lvl % 5 == 0)
             {
                 regenDelayInSeconds *= 0.8f;
+                _atkCount++;
             }
 
             if (lvl % 7 == 0)
             {
                 atkCooldownModifier *= 0.8f;
-            }
-
-            if (lvl % 15 == 0)
-            {
-                _atkCount++;
+                
             }
 
             text += $"Health: {lastHealth} => {maxHealth} (+{maxHealth - lastHealth})\n" +

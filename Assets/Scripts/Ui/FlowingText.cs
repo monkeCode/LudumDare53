@@ -28,4 +28,9 @@ public class FlowingText : MonoBehaviour
     {
         _text.SetText(text);
     }
+
+    private void OnDestroy()
+    {
+        UiManager.Instance.DeletingText();
+    }
 }

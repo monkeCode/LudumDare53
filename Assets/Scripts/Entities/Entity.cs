@@ -6,7 +6,6 @@ namespace Entities
 {
     public class Entity : MonoBehaviour, IDamageable
     {
-        [SerializeField] protected int hp;
         [SerializeField] protected int maxHp;
         [SerializeField] protected float speed;
         [SerializeField] protected int damage;
@@ -14,10 +13,13 @@ namespace Entities
         [SerializeField] protected float atkDistance;
         [SerializeField] private MonsterType _type;
         [SerializeField] private xpShard XPShard;
-        
+        [SerializeField] private float _hpCoef;
+        [SerializeField] private float _dmageCoef;
         public MonsterType Type => _type;
 
         private bool _canDamage = true;
+        private int hp;
+        private int dmg;
     
         protected virtual void Move(Vector2 direction)
         {
@@ -26,7 +28,7 @@ namespace Entities
     
         protected virtual void Attack(IDamageable damageable)
         {
-            damageable.TakeDamage(damage);
+            damageable.TakeDamage(dmg);
         }
 
         protected virtual void Update()
@@ -84,15 +86,15 @@ namespace Entities
             Gizmos.DrawWireSphere(transform.position, atkDistance);
         }
 
-        public void BoostStats(float hpCoef, float damageCoef)
+        public void BoostStats(float time)
         {
-            hp = (int)(hp*hpCoef);
-            damage = (int)(damageCoef*damage);
+            hp = (int)(maxHp*_hpCoef * time);
+            dmg = (int)(_dmageCoef*damage * time);
         }
 
         public virtual void SpawnStart()
         {
-            hp = maxHp;
+            BoostStats(WaveGenerator.Timer/60+1);
         }
     }
 }

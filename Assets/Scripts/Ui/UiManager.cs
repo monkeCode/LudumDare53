@@ -22,6 +22,9 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject ShopHelper;
     [SerializeField] private PauseMenu PauseMenu;
     [SerializeField] private Vector2 damageTextOffset = new Vector2(0.1f, 0.1f);
+    [SerializeField] private int _TotalTextCount;
+
+    private int _textCountNow = 0;
     
     private List<GameObject> currentDebuffIcons;
 
@@ -68,16 +71,22 @@ public class UiManager : MonoBehaviour
 
     public void ShowDamageText(int damage, Vector2 pos)
     {
+        if(_textCountNow > _TotalTextCount) return;
+        _textCountNow++;
         Instantiate(_damageText, pos+damageTextOffset, Quaternion.identity).Init(damage.ToString());
     }
 
     public void ShowRewardText(int money, Vector2 pos)
     {
+        if(_textCountNow > _TotalTextCount) return;
+        _textCountNow++;
         Instantiate(goldText, pos, Quaternion.identity).Init(money.ToString());
     }
 
     public void ShowHealingText(int heal, Vector2 pos)
     {
+        if(_textCountNow > _TotalTextCount) return;
+        _textCountNow++;
         Instantiate(healingText, pos + damageTextOffset, Quaternion.identity).Init(heal.ToString());
     }
 
@@ -123,4 +132,9 @@ public class UiManager : MonoBehaviour
     }
 
     public void ShopHelperSetActive(bool value) => ShopHelper.SetActive(value);
+
+    public void DeletingText()
+    {
+        _textCountNow--;
+    }
 }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Zombie Wave
   m_EditorClassIdentifier: 
   _entity: {fileID: 2170556768774635063, guid: 2bad5aad57c247449a753970860cd0f0, type: 3}
-  _count: 10
+  _count: 6

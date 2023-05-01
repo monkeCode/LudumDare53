@@ -32,6 +32,11 @@ public class DeliveryPoint : MonoBehaviour
 
     }
 
+    private void OnDestroy()
+    {
+        DeliveryPoints.Remove(this);
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (!col.gameObject.GetComponent<Player.Player>())

@@ -16,7 +16,7 @@ public class FillUpgradeWeaponData : MonoBehaviour
 
     public void Fill(Weapon weapon)
     {
-        
+        image.sprite = weapon.weaponPic;
         weaponName.text = weapon.weaponName;
         var lvl = weapon.Lvl + 1;
         weaponLvl.text = "lvl" + lvl;

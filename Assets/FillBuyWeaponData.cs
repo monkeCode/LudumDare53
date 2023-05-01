@@ -17,7 +17,7 @@ public class FillBuyWeaponData : MonoBehaviour
 
     public void Fill(Weapon weapon)
     {
-        
+        image.sprite = weapon.weaponPic;
         weaponName.text = weapon.weaponName;
          weaponLvl.text = "lvl" + 1;
          weaponDesc.text = weapon.description;

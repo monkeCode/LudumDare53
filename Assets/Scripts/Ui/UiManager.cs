@@ -29,6 +29,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject shopToBuyTab;
     [SerializeField] private GameObject shopToUpgradeTab;
     [SerializeField] private Transform shopUiPanel;
+    [SerializeField] private Image flashbang;
     private GameObject toBuyTab;
     private GameObject toUpgradeTab;
     private GameObject randomTab;
@@ -186,6 +187,23 @@ public class UiManager : MonoBehaviour
         Destroy(toBuyTab);
         Destroy(toUpgradeTab);
         Destroy(randomTab);
+    }
+
+    public void FlashBang()
+    {
+        flashbang.gameObject.SetActive(true);
+        StartCoroutine(Flashbang());
+    }
+
+    private IEnumerator Flashbang()
+    {
+        for (var i = 0; i < 10; i++)
+        {
+            var color = flashbang.color;
+            color.a += 0.1f;
+            flashbang.color = color;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     public void ShopHelperSetActive(bool value) => ShopHelper.SetActive(value);

@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class GoodEnding : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameObject uhOhSociety;
     void Start()
     {
-        
+        WaveGenerator.TimeEnded += Cringe;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Cringe()
     {
-        
+
+        StartCoroutine(UltraCringe());
+
+    }
+
+    private IEnumerator UltraCringe()
+    {
+        UiManager.Instance.FlashBang();
+        yield return new WaitForSeconds(1f);
+        uhOhSociety.SetActive(true);
     }
 }

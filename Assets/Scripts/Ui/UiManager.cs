@@ -24,6 +24,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject ShopUI;
     [SerializeField] private GameObject ShopHelper;
     [SerializeField] private PauseMenu PauseMenu;
+    [SerializeField] private DeathMenu DeathMenu;
     [SerializeField] private Vector2 damageTextOffset = new Vector2(0.1f, 0.1f);
     [SerializeField] private GameObject shopToBuyTab;
     [SerializeField] private GameObject shopToUpgradeTab;
@@ -50,7 +51,12 @@ public class UiManager : MonoBehaviour
         currentDebuffIcons = new List<GameObject>();
         DebuffIconPos = new Vector3(0, Screen.height - Yborder);
     }
-    
+
+    private void Start()
+    {
+        Player.Player.Instance.onDeath.AddListener(ShowDeathMenu);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -76,6 +82,11 @@ public class UiManager : MonoBehaviour
     {
         PauseManager.Instance.PauseOff();
         PauseMenu.gameObject.SetActive(false);
+    }
+
+    private void ShowDeathMenu()
+    {
+        DeathMenu.gameObject.SetActive(true);
     }
 
     public void ShowDamageText(int damage, Vector2 pos)

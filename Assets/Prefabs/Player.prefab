@@ -114,7 +114,8 @@ MonoBehaviour:
   audioSource: {fileID: 4742673473355099009}
   levelUpSound: {fileID: 8300000, guid: 0d49101eb72599f4e85e090d3e750391, type: 3}
   XPSound: {fileID: 8300000, guid: 5e78ec5c097483b48aff274fd7ca1027, type: 3}
-  MoneySound: {fileID: 8300000, guid: bdf5e32f263657a41862977c8a90528a, type: 3}
+  moneySound: {fileID: 8300000, guid: bdf5e32f263657a41862977c8a90528a, type: 3}
+  deathSound: {fileID: 8300000, guid: be558e1bca194b74ead7db09110b74fd, type: 3}
   onDeath:
     m_PersistentCalls:
       m_Calls: []

@@ -25,7 +25,9 @@ namespace Player
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip levelUpSound;
         [SerializeField] private AudioClip XPSound;
-        [SerializeField] private AudioClip MoneySound;
+        [SerializeField] private AudioClip moneySound;
+        [SerializeField] private AudioClip deathSound;
+        private bool isDead;
         public float AtkCooldownModifier => atkCooldownModifier;
 
         public int AtkCount => _atkCount;
@@ -45,7 +47,7 @@ namespace Player
             set
             {
                 if(value > money)
-                    audioSource.PlayOneShot(MoneySound);
+                    audioSource.PlayOneShot(moneySound);
                 money = value;
                 MoneyChanged?.Invoke(money);
             }
@@ -72,6 +74,7 @@ namespace Player
         
         public void TakeDamage(int damage)
         {
+            if(isDead) return;
             HpChangedFromTo?.Invoke(health, health-damage);
             health -= damage;
 
@@ -94,14 +97,19 @@ namespace Player
 
         public void Kill()
         {
+            isDead = true;
+            audioSource.PlayOneShot(deathSound);
             onDeath.Invoke();
+            PauseManager.Instance.PauseOn();
+            PauseManager.Instance.canOffPause = false;
         }
 
         private IEnumerator RegenerateHp()
         {
             while (true)
             {
-                health = Math.Min(maxHealth, health+regenValue);
+                if(!isDead)
+                    health = Math.Min(maxHealth, health+regenValue);
                 yield return new WaitForSeconds(regenDelayInSeconds);
             }
         }

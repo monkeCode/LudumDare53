@@ -76,7 +76,7 @@ namespace Weapons
         public override void LvlUp()
         {
             Lvl++;
-            _atkRadius *= 1.1f;
+            _atkRadius *= 1.2f;
             transform.localScale = new Vector3(_atkRadius * 1.7f, _atkRadius * 1.7f, 1);
             Damage = Damage * Lvl / (Lvl - 1);
             _speed *= 0.8f;

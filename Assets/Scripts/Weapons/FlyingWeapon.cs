@@ -35,6 +35,7 @@ namespace Weapons
             Lvl++;
             Damage = Damage * Lvl / (Lvl - 1);
             _speedCoef *= 1.1f;
+            _atkRadius *= 1.1f;
         }
 
         protected override void Update()

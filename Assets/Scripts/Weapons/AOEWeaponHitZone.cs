@@ -30,7 +30,6 @@ namespace Weapons
 
         public void ShowHitEffect()
         {
-            Debug.Log("zone hit effect");
             animator.Play("AOEHit", -1, 0f);
         }
     }

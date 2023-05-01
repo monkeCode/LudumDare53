@@ -12,6 +12,7 @@ public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
     [SerializeField] private Entity _pumpkin;
     [SerializeField] private Entity _cyclop;
     [SerializeField] private Entity _skeleton;
+    [SerializeField] private Entity _wolf;
     public const int START_MOSTERS_COUNT = 100;
     
     private static HeinzDoofenshmirtzInstantinator _instance;
@@ -24,6 +25,7 @@ public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
         {MonsterType.FuckingPumpkin, new Queue<Entity>()},
         {MonsterType.Cyclop, new Queue<Entity>()},
         {MonsterType.Skeleton, new Queue<Entity>()},
+        {MonsterType.Wolf, new Queue<Entity>()},
     };
     
     private List<Entity> _sceneEntities = new();

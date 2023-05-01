@@ -31,14 +31,14 @@ namespace Weapons
             Lvl++;
             if (Lvl < 3)
             {
-                _radius *= 1.5f;
+                _radius *= 1.3f;
                 Damage+=2;
 
             }
 
             if (Lvl >= 3)
             {
-                _radius *= 1.2f;
+                _radius *= 1.1f;
                 Damage++;
             }
         }

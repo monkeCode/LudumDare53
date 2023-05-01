@@ -9,11 +9,14 @@ namespace Weapons
         [SerializeField] private float _radius;
 
         [SerializeField] private SpriteRenderer _effect;
+        [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private AudioClip _audioClip;
         private Sequence _effectSequence;
         
         public override void Attack()
         {
             ShowEffect();
+            PlayAudioEffect();
             foreach (var entity in GetEntitiesInCircle(Player.Player.Instance.transform.position, _radius))
             {
                 entity.TakeDamage(Damage);
@@ -51,6 +54,11 @@ namespace Weapons
             _effectSequence = DOTween.Sequence();
             _effectSequence.Append(_effect.DOFade(0.7f, 0.2f))
                 .Append(_effect.DOFade(0, 0.2f));
+        }
+
+        private void PlayAudioEffect()
+        {
+            _audioSource.PlayOneShot(_audioClip);
         }
     }
 }

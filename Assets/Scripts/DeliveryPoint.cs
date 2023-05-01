@@ -21,6 +21,8 @@ public class DeliveryPoint : MonoBehaviour
     private Weapon weapon;
     private bool isToBuy;
 
+    private bool _active = false;
+    
     private void Start()
     {
         DeliveryPoints.Add(this);
@@ -90,7 +92,9 @@ public class DeliveryPoint : MonoBehaviour
 
     private void OpenShopMenu()
     {
-        UiManager.Instance.ShopUISetActive(true);
+        _active = !_active;
+        UiManager.Instance.ShopUISetActive(_active);
+        if(!_active) return;
         if (!shopGenerated || !ShopIsValid())
             GetShopGeneration();
         GenerateShop();

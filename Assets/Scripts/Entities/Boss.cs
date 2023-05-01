@@ -8,7 +8,7 @@ namespace Entities
         
         protected override void Update()
         {
-            base.Update();
+            LifeCycle();
             var dir = Player.Player.Instance.transform.position - transform.position;
             if (dir.magnitude > _toPlayerDis)
             {

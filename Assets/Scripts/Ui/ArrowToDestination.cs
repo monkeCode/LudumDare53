@@ -7,7 +7,7 @@ public class ArrowToDestination : MonoBehaviour
 {
 
     private Camera cam;
-    private float borderSize = 100f;
+    private float borderSize = 150f;
     private bool isOffScreen;
     private Vector3 vectorUp = new Vector3(0, 2, 0); 
     

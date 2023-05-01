@@ -45,7 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponsToBuy:
-  - {fileID: 797750409501317315, guid: 4b03b653f4cbcc64e9609c1cb93dd584, type: 3}
+  - {fileID: 6659593554959151490, guid: 3d869db0975f00346901375f04be49a0, type: 3}
+  - {fileID: 5938353324162271636, guid: a4f95ad497248404789042d387f3e487, type: 3}
+  - {fileID: 8842848185079404266, guid: 4189906c084fa9a488d5cd3292271367, type: 3}
+  - {fileID: 1217128251992284883, guid: 2793e035037a3484790d0d33f55bff12, type: 3}
   buyPrice: 50
   defaultWeapon: {fileID: 0}
   maxLvl: 6

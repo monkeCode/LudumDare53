@@ -686,7 +686,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Guns   and   Toads:
 
-    Battle   for delivery'
+    Battle   for   delivery'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 505422acbdfe4ad48b419ad25e7e45c3, type: 2}
   m_sharedMaterial: {fileID: -1185236344390158463, guid: 505422acbdfe4ad48b419ad25e7e45c3, type: 2}

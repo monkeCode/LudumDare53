@@ -12,7 +12,7 @@ public class GoodEnding : MonoBehaviour
 
     private void Cringe()
     {
-        if (Player.Player.Instance.Money > 10000)
+        if (Player.Player.Instance.Money > 1000)
             StartCoroutine(UltraCringe());
         else
             StartCoroutine(UltraCringeBad());

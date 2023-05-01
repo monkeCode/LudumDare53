@@ -25,6 +25,7 @@ namespace Player
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip levelUpSound;
         [SerializeField] private AudioClip XPSound;
+        [SerializeField] private AudioClip MoneySound;
         public float AtkCooldownModifier => atkCooldownModifier;
 
         public int AtkCount => _atkCount;
@@ -43,6 +44,8 @@ namespace Player
             get => money;
             set
             {
+                if(value > money)
+                    audioSource.PlayOneShot(MoneySound);
                 money = value;
                 MoneyChanged?.Invoke(money);
             }

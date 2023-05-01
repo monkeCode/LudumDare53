@@ -17,10 +17,10 @@ public class FillBuyWeaponData : MonoBehaviour
 
     public void Fill(Weapon weapon)
     {
-        
-        weaponName.text = weapon.name;
+        image.sprite = weapon.weaponPic;
+        weaponName.text = weapon.weaponName;
          weaponLvl.text = "lvl" + 1;
-         weaponDesc.text = "unknown desc";
+         weaponDesc.text = weapon.description;
          weaponPrice.text = WeaponManager.Instance.buyPrice.ToString();
          buyButton.onClick.AddListener(() => BuyWeapon(weapon));
     }

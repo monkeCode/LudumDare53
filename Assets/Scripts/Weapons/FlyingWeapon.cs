@@ -14,8 +14,11 @@ namespace Weapons
         [SerializeField] private float _searchRadius;
         [SerializeField] private float _atkRadius;
         
+        
         private Entity _target;
         
+        
+
 
         public override void Attack()
         {

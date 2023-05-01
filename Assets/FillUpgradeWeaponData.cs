@@ -16,11 +16,11 @@ public class FillUpgradeWeaponData : MonoBehaviour
 
     public void Fill(Weapon weapon)
     {
-        
-        weaponName.text = weapon.name;
+        image.sprite = weapon.weaponPic;
+        weaponName.text = weapon.weaponName;
         var lvl = weapon.Lvl + 1;
         weaponLvl.text = "lvl" + lvl;
-        weaponDesc.text = "unknown desc";
+        weaponDesc.text = weapon.description;
         weaponPrice.text = WeaponManager.Instance.lvlToUpgradePrice[weapon.Lvl].ToString();
         upgradeButton.onClick.AddListener(() => UpgradeWeapon(weapon));
     }

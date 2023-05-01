@@ -282,6 +282,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _coolDown: 1
   _damage: 5
+  weaponPic: {fileID: 0}
+  weaponName: Based whip
+  description: Castlevania classic
   timeBetweenAttacks: 0.2
   leftHitZone: {fileID: 5727455298522831376}
   rightHitZone: {fileID: 1246754399163173058}

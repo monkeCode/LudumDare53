@@ -20,6 +20,7 @@ namespace Weapons
         private SpriteRenderer _renderer;
         private float _distance;
         private float Alpha => Mathf.PI/_distance;
+
         private void Start()
         {
             _renderer = GetComponent<SpriteRenderer>();

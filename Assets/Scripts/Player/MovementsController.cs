@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Player
 {
@@ -17,6 +18,7 @@ namespace Player
                 Instance = this;
             else
                 Destroy(gameObject);
+            InputSystem.EnableDevice(Keyboard.current);
             _controls = new Controls();
             _rigidbody2D = GetComponent<Rigidbody2D>();
 

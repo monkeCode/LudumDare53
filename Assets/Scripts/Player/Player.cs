@@ -21,6 +21,9 @@ namespace Player
         [SerializeField] private float atkCooldownModifier = 1;
         [SerializeField] private float regenDelayInSeconds = 1;
         [SerializeField] private int regenValue = 1;
+
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioClip levelUpSound;
         public float AtkCooldownModifier => atkCooldownModifier;
 
         public int AtkCount => _atkCount;
@@ -143,6 +146,7 @@ namespace Player
 
         private void AddNewLvl()
         {
+            audioSource.PlayOneShot(levelUpSound);
             lvl++;
             var text = $"New lvl {lvl}\n";
             

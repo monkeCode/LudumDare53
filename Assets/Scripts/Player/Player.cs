@@ -121,6 +121,7 @@ namespace Player
             _deliveries.Add(delivery, newPointer);
             UiManager.Instance.ShowDebuffIcons();
             delivery.Debuff.Action.Invoke(true);
+            UiManager.Instance.ShowJustText("New    delivery!");
         }
 
         public Delivery[] CompleteDelivery(DeliveryPoint destination)

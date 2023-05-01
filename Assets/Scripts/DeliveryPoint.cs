@@ -1,14 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
 using DefaultNamespace;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Weapons;
 using Random = UnityEngine.Random;
-using Range = UnityEngine.SocialPlatforms.Range;
 
 public class DeliveryPoint : MonoBehaviour
 {

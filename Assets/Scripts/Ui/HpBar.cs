@@ -20,7 +20,6 @@ public class HpBar : MonoBehaviour
     {
         var coef = (float)arg1 / arg2;
         var i = (int)(coef * (_sprites.Length-1));
-        Debug.Log(coef);
         _image.sprite = _sprites[i];
         _image.SetNativeSize();
     }

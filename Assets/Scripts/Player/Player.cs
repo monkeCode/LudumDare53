@@ -53,13 +53,14 @@ namespace Player
             }
         }
 
+        public int MaxHp => maxHealth;
+
         [SerializeField] private ArrowToDestination pointer;
         private Dictionary<Delivery, ArrowToDestination> _deliveries;
 
         public event Action<int, int> HpChanged;
         public event Action<int, int> HpChangedFromTo; 
         public event Action<int, int> ExpChanged;
-
         public event Action<int> MoneyChanged;
 
         private void Awake()
@@ -106,10 +107,9 @@ namespace Player
 
         private IEnumerator RegenerateHp()
         {
-            while (true)
+            while (!isDead)
             {
-                if(!isDead)
-                    health = Math.Min(maxHealth, health+regenValue);
+                health = Math.Min(maxHealth, health+regenValue);
                 yield return new WaitForSeconds(regenDelayInSeconds);
             }
         }
@@ -172,7 +172,7 @@ namespace Player
             maxHealth += 20;
             if (lvl % 5 == 0)
             {
-                regenDelayInSeconds *= 0.8f;
+                regenDelayInSeconds *= 0.7f;
                 _atkCount++;
             }
 

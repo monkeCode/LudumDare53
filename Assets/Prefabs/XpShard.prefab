@@ -101,6 +101,7 @@ MonoBehaviour:
   lowXp: {r: 0.24491175, g: 0.9622642, b: 0, a: 1}
   mediumXp: {r: 0.9607843, g: 0.52290946, b: 0, a: 1}
   highXp: {r: 1, g: 0, b: 0.07585335, a: 1}
+  _renderer: {fileID: 9085132745997909284}
 --- !u!61 &1502190271023875573
 BoxCollider2D:
   m_ObjectHideFlags: 0

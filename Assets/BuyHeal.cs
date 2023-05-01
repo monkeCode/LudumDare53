@@ -11,6 +11,6 @@ public class BuyHeal : MonoBehaviour
     {
         if (Player.Player.Instance.Money <= price) return;
         Player.Player.Instance.Money -= price;
-        Player.Player.Instance.Heal(heal);
+        Player.Player.Instance.Heal(heal/100 * Player.Player.Instance.MaxHp);
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Weapons
@@ -9,7 +8,7 @@ namespace Weapons
         [SerializeField] private Weapon _prefab;
         private List<Weapon> _activeWeapons = new();
 
-        public  override void Attack()
+        public override void Attack()
         {
             
         }
@@ -19,7 +18,7 @@ namespace Weapons
             if (_activeWeapons.Count < Player.Player.Instance.AtkCount)
             {
                 _activeWeapons.Add(Instantiate(_prefab, Player.Player.Instance.transform.position, Quaternion.identity));
-                for(int i = 1; i < _activeWeapons[0].Lvl; i++)
+                for(var i = 1; i < Lvl; i++)
                     _activeWeapons[^1].LvlUp();
                 return;
             }
@@ -31,6 +30,7 @@ namespace Weapons
 
         public override void LvlUp()
         {
+            Lvl++;
             foreach (var weapon in _activeWeapons)
             {
                 weapon.LvlUp();

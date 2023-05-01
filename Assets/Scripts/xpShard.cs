@@ -10,7 +10,7 @@ public class xpShard : MonoBehaviour
     [SerializeField] private Color lowXp;
     [SerializeField] private Color mediumXp;
     [SerializeField] private Color highXp;
-    
+    [SerializeField] private SpriteRenderer _renderer;
     public enum Type
     {
         LowXp,
@@ -34,19 +34,19 @@ public class xpShard : MonoBehaviour
         switch (xp)
         {
             case Type.LowXp:
-                gameObject.GetComponent<SpriteRenderer>().material.color = lowXp;
+                _renderer.material.color = lowXp;
                 this.xp = 10;
                 break;
             case Type.MediumXp:
-                gameObject.GetComponent<SpriteRenderer>().material.color = mediumXp;
+                _renderer.material.color = mediumXp;
                 this.xp = 25;
                 break;
             case Type.HighXp:
-                gameObject.GetComponent<SpriteRenderer>().material.color = highXp;
+                _renderer.material.color = highXp;
                 this.xp = 50;
                 break;
             default:
-                gameObject.GetComponent<SpriteRenderer>().material.color = lowXp;
+                _renderer.material.color = lowXp;
                 this.xp = 10;
                 break;
         }

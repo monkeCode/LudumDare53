@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Medkit : MonoBehaviour
@@ -11,8 +8,9 @@ public class Medkit : MonoBehaviour
     {
         if (!col.gameObject.GetComponent<Player.Player>())
             return;
-        UiManager.Instance.ShowHealingText(heal, Player.Player.Instance.transform.position);
-        Player.Player.Instance.Heal(heal);
+        var heals = heal/100 * Player.Player.Instance.MaxHp;
+        UiManager.Instance.ShowHealingText(heals, Player.Player.Instance.transform.position);
+        Player.Player.Instance.Heal(heals);
         Destroy(gameObject);
     }
 }

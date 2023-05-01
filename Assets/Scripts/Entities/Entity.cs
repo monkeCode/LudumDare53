@@ -15,6 +15,7 @@ namespace Entities
         [SerializeField] private xpShard XPShard;
         [SerializeField] private float _hpCoef;
         [SerializeField] private float _dmageCoef;
+        private const float ToPlayerDistance = 100;
         public MonsterType Type => _type;
 
         private bool _canDamage = true;
@@ -34,6 +35,8 @@ namespace Entities
         protected virtual void Update()
         {
             LifeCycle();
+            if(Vector2.Distance(Player.Player.Instance.transform.position, transform.position) > ToPlayerDistance)
+                HeinzDoofenshmirtzInstantinator.Destroy(this);
         }
 
         protected void LifeCycle()

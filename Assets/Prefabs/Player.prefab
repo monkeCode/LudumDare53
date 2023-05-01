@@ -113,6 +113,7 @@ MonoBehaviour:
   regenValue: 1
   audioSource: {fileID: 4742673473355099009}
   levelUpSound: {fileID: 8300000, guid: 0d49101eb72599f4e85e090d3e750391, type: 3}
+  XPSound: {fileID: 8300000, guid: 5e78ec5c097483b48aff274fd7ca1027, type: 3}
   onDeath:
     m_PersistentCalls:
       m_Calls: []

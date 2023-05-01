@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 7225033608001638294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,11 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac79279b6ceae746b3b01a2f5b56dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 7
-  speed: 8
-  damage: 4
+  maxHp: 6
+  speed: 7
+  damage: 2
   damageDelay: 0.5
-  atkDistance: 0.15
+  atkDistance: 0.73
   _type: 5
   XPShard: {fileID: 5297552437456271261, guid: 758621e82f795534abc1250901823a18, type: 3}
   _hpCoef: 1.1

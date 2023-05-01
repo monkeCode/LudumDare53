@@ -44,9 +44,9 @@ namespace Player
         public void SpeedDebuff(bool setActive)
         {
             if (setActive)
-                speed /= 2;
+                speed /= 1.5f;
             else
-                speed *= 2;
+                speed *= 1.5f;
         }
         private void OnEnable()
         {

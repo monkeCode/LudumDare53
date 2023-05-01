@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using Entities;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
@@ -90,6 +87,14 @@ public class HeinzDoofenshmirtzInstantinator: MonoBehaviour
         Instance._bufferEntities[en.Type].Enqueue(en);
     }
 
+    public static void TOTALYKIIIIIIIIIIIIIIIILL()
+    {
+        foreach (var en in Instance._sceneEntities)
+        {
+            Destroy(en);
+        }
+    }
+        
     public IReadOnlyList<Entity> GetAllEntities()
     {
         return _sceneEntities;

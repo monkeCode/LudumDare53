@@ -110,6 +110,7 @@ namespace Player
             while (!isDead)
             {
                 health = Math.Min(maxHealth, health+regenValue);
+                HpChanged?.Invoke(health, maxHealth);
                 yield return new WaitForSeconds(regenDelayInSeconds);
             }
         }

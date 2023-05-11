@@ -8,9 +8,9 @@ public class Medkit : MonoBehaviour
     {
         if (!col.gameObject.GetComponent<Player.Player>())
             return;
-        var heals = heal/100 * Player.Player.Instance.MaxHp;
-        UiManager.Instance.ShowHealingText(heals, Player.Player.Instance.transform.position);
-        Player.Player.Instance.Heal(heals);
+        var heals = (float)heal/100 * Player.Player.Instance.MaxHp;
+        UiManager.Instance.ShowHealingText((int) heals, Player.Player.Instance.transform.position);
+        Player.Player.Instance.Heal((int) heals);
         Destroy(gameObject);
     }
 }

@@ -43,6 +43,7 @@ namespace Weapons
 
         private IEnumerator Atk()
         {
+
             float totalX = 0;
             float totalY = 0;
             float startedY = transform.position.y;
@@ -50,6 +51,7 @@ namespace Weapons
             _audio.Play();
             for(float i = 0; i < _speed; i+= Time.deltaTime )
             {
+                if(_distance == 0) break;
                 Debug.Log(_target.x);
                 _renderer.sprite = _jumpSprite;
                 _renderer.flipX = _target.x - transform.position.x > 0;
